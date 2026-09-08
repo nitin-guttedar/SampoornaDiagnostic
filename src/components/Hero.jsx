@@ -132,43 +132,44 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
                 gap: '12px',
                 marginBottom: '2rem',
               }}
+              className="hero-guarantees"
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 500 }}>
-                <CheckCircle2 size={18} color="#00a859" />
+                <CheckCircle2 size={18} color="#00a859" style={{ flexShrink: 0 }} />
                 <span>High-Standard Automated Lab</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 500 }}>
-                <CheckCircle2 size={18} color="#00a859" />
+                <CheckCircle2 size={18} color="#00a859" style={{ flexShrink: 0 }} />
                 <span>Experienced Radiologists & MDs</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 500 }}>
-                <CheckCircle2 size={18} color="#00a859" />
+                <CheckCircle2 size={18} color="#00a859" style={{ flexShrink: 0 }} />
                 <span>Same-Day WhatsApp Reports</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 500 }}>
-                <CheckCircle2 size={18} color="#00a859" />
+                <CheckCircle2 size={18} color="#00a859" style={{ flexShrink: 0 }} />
                 <span>Uninterrupted Power & Cold Chain</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button onClick={onOpenBooking} className="btn-primary" style={{ fontSize: '0.98rem', padding: '0.9rem 1.8rem' }}>
-                <Calendar size={17} />
+            <div className="hero-cta-group" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <button onClick={onOpenBooking} className="btn-primary hero-cta-btn" style={{ fontSize: '0.95rem', padding: '0.85rem 1.6rem' }}>
+                <Calendar size={17} style={{ flexShrink: 0 }} />
                 <span>Book Test / CT Scan</span>
               </button>
 
-              <button onClick={onOpenDirectory} className="btn-secondary" style={{ fontSize: '0.98rem', padding: '0.9rem 1.6rem' }}>
-                <FileSearch size={17} color="#0b58ca" />
+              <button onClick={onOpenDirectory} className="btn-secondary hero-cta-btn" style={{ fontSize: '0.95rem', padding: '0.85rem 1.4rem' }}>
+                <FileSearch size={17} color="#0b58ca" style={{ flexShrink: 0 }} />
                 <span>View Tests & Pricing</span>
               </button>
 
               <a
                 href={`tel:${CLINIC_INFO.phone}`}
-                className="btn-green"
-                style={{ fontSize: '0.98rem', padding: '0.9rem 1.6rem' }}
+                className="btn-green hero-cta-btn"
+                style={{ fontSize: '0.95rem', padding: '0.85rem 1.4rem' }}
               >
-                <PhoneCall size={17} />
+                <PhoneCall size={17} style={{ flexShrink: 0 }} />
                 <span>Call Helpline</span>
               </a>
             </div>
@@ -183,12 +184,14 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
           >
             {/* 3D Equipment Selector Tabs */}
             <div
+              className="hero-tabs-scroll"
               style={{
                 display: 'flex',
                 gap: '8px',
                 marginBottom: '12px',
                 overflowX: 'auto',
                 paddingBottom: '4px',
+                WebkitOverflowScrolling: 'touch',
               }}
             >
               {modelTabs.map((tab) => {
@@ -200,11 +203,12 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
                     onClick={() => setHeroModel(tab.key)}
                     style={{
                       flex: '1',
+                      minWidth: '82px',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
                       gap: '4px',
-                      padding: '9px 10px',
+                      padding: '8px 6px',
                       background: active
                         ? 'linear-gradient(135deg, rgba(3, 78, 162, 0.25) 0%, rgba(0, 168, 89, 0.2) 100%)'
                         : 'var(--bg-card)',
@@ -217,12 +221,13 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
                     }}
                   >
                     <Icon size={17} color={active ? '#00a859' : '#64748b'} />
-                    <span style={{ fontSize: '0.8rem', fontWeight: 700 }}>{tab.label}</span>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 700, whiteSpace: 'nowrap' }}>{tab.label}</span>
                     <span
                       style={{
-                        fontSize: '0.66rem',
+                        fontSize: '0.65rem',
                         color: active ? '#d97706' : 'var(--text-muted)',
                         fontWeight: 600,
+                        whiteSpace: 'nowrap',
                       }}
                     >
                       {tab.badge}
@@ -233,7 +238,7 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
             </div>
 
             {/* 3D WebGL Canvas Card */}
-            <div className="canvas-3d-wrapper" style={{ height: '430px' }}>
+            <div className="canvas-3d-wrapper hero-canvas-wrapper">
               {/* Scanline Animation */}
               <div className="scan-line" />
 
@@ -241,22 +246,22 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
               <div
                 style={{
                   position: 'absolute',
-                  top: '14px',
-                  left: '16px',
+                  top: '12px',
+                  left: '14px',
                   zIndex: 10,
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
                   background: theme === 'light' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(7, 13, 24, 0.85)',
                   backdropFilter: 'blur(8px)',
-                  padding: '5px 12px',
+                  padding: '5px 10px',
                   borderRadius: '9999px',
                   border: '1px solid var(--border-green)',
                 }}
               >
                 <span className="pulse-indicator" />
-                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#00a859', letterSpacing: '0.04em' }}>
-                  EQUIPMENT STATUS: ACTIVE & CALIBRATED
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#00a859', letterSpacing: '0.04em' }}>
+                  ACTIVE & CALIBRATED
                 </span>
               </div>
 
@@ -266,43 +271,36 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
 
             {/* Floating Telemetry Stats Badge */}
             <div
-              className="glass-panel"
+              className="glass-panel hero-telemetry-badge"
               style={{
-                position: 'absolute',
-                bottom: '-22px',
-                left: '20px',
-                right: '20px',
                 padding: '12px 20px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
                 border: '1px solid var(--border-light)',
                 background: 'var(--bg-card)',
               }}
             >
-              <div>
-                <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div className="hero-telemetry-item">
+                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Facility Location
                 </span>
-                <p style={{ fontSize: '0.86rem', fontWeight: 700, color: 'var(--heading-color)' }}>
+                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--heading-color)' }}>
                   Doomlight Circle, Madhugiri
                 </p>
               </div>
-              <div style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
-              <div>
-                <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div className="hero-telemetry-divider" style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
+              <div className="hero-telemetry-item">
+                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Consultant Head
                 </span>
-                <p style={{ fontSize: '0.86rem', fontWeight: 700, color: '#034ea2' }}>
+                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: '#034ea2' }}>
                   Dr. Somashekhar M.B.
                 </p>
               </div>
-              <div style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
-              <div>
-                <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div className="hero-telemetry-divider" style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
+              <div className="hero-telemetry-item">
+                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Diagnostics
                 </span>
-                <p style={{ fontSize: '0.86rem', fontWeight: 700, color: '#00a859' }}>
+                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: '#00a859' }}>
                   Imaging + Pathology
                 </p>
               </div>
@@ -313,7 +311,7 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
         {/* 4 Key Pillars / Benefits Bar from Content PDF */}
         <div
           style={{
-            marginTop: '70px',
+            marginTop: '60px',
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
             gap: '16px',
@@ -329,33 +327,33 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08, duration: 0.45 }}
               style={{
-                padding: '1.5rem 1.3rem',
+                padding: '1.4rem 1.2rem',
                 borderTop: `3px solid ${benefit.color}`,
               }}
             >
               <div
                 style={{
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '10px',
                   background: `${benefit.color}15`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '0.9rem',
+                  marginBottom: '0.85rem',
                 }}
               >
                 <ShieldCheck size={20} color={benefit.color} />
               </div>
-              <h3 style={{ fontSize: '1.1rem', color: 'var(--heading-color)', marginBottom: '0.35rem' }}>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--heading-color)', marginBottom: '0.35rem' }}>
                 {benefit.title}
               </h3>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                 {benefit.desc}
               </p>
               <div
                 style={{
-                  marginTop: '0.85rem',
+                  marginTop: '0.8rem',
                   fontSize: '0.74rem',
                   fontWeight: 700,
                   color: benefit.color,
@@ -371,18 +369,73 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
       </div>
 
       <style>{`
+        .hero-canvas-wrapper {
+          height: 430px;
+        }
+        .hero-telemetry-badge {
+          position: absolute;
+          bottom: -22px;
+          left: 20px;
+          right: 20px;
+          display: flex;
+          justifyContent: space-between;
+          align-items: center;
+        }
+
         @media (max-width: 992px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
-            gap: 3.5rem !important;
+            gap: 2.5rem !important;
           }
           .benefits-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
+
+        @media (max-width: 768px) {
+          .hero-canvas-wrapper {
+            height: 360px !important;
+          }
+        }
+
         @media (max-width: 640px) {
+          .hero-guarantees {
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+          }
+          .hero-cta-group {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .hero-cta-btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+          .hero-canvas-wrapper {
+            height: 310px !important;
+          }
+          .hero-telemetry-badge {
+            position: static !important;
+            margin-top: 12px !important;
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 8px !important;
+            padding: 10px 12px !important;
+            text-align: center !important;
+          }
+          .hero-telemetry-divider {
+            display: none !important;
+          }
           .benefits-grid {
             grid-template-columns: 1fr !important;
+            gap: 12px !important;
+          }
+        }
+
+        @media (max-width: 440px) {
+          .hero-telemetry-badge {
+            grid-template-columns: 1fr !important;
+            text-align: left !important;
           }
         }
       `}</style>

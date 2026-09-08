@@ -117,18 +117,18 @@ export default function Navbar({
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            flexWrap: 'nowrap',
+            gap: '8px',
           }}
         >
           {/* Left Badges */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '18px', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' }}>
-              <Clock size={13} color="#fbbf24" />
-              <span>{CLINIC_INFO.workingHours.weekdays}</span>
+              <Clock size={13} color="#fbbf24" style={{ flexShrink: 0 }} />
+              <span className="topbar-hours-full">{CLINIC_INFO.workingHours.weekdays}</span>
+              <span className="topbar-hours-short">7:00 AM - 8:30 PM</span>
             </span>
             <span
               style={{
-                display: 'none',
                 alignItems: 'center',
                 gap: '6px',
                 opacity: 0.95,
@@ -140,11 +140,12 @@ export default function Navbar({
               <span>Near Doomlight Circle, Madhugiri</span>
             </span>
             <span
+              className="topbar-kpme"
               style={{
                 background: 'rgba(255,255,255,0.18)',
-                padding: '2px 8px',
+                padding: '2px 7px',
                 borderRadius: '4px',
-                fontSize: '0.74rem',
+                fontSize: '0.72rem',
                 fontWeight: 700,
                 letterSpacing: '0.04em',
                 whiteSpace: 'nowrap',
@@ -155,7 +156,7 @@ export default function Navbar({
           </div>
 
           {/* Right Controls: Theme Toggle + Phone Helpline */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
@@ -164,7 +165,7 @@ export default function Navbar({
                 background: 'rgba(255,255,255,0.2)',
                 border: '1px solid rgba(255,255,255,0.3)',
                 color: '#ffffff',
-                padding: '3px 10px',
+                padding: '3px 8px',
                 borderRadius: '9999px',
                 fontSize: '0.75rem',
                 cursor: 'pointer',
@@ -176,7 +177,7 @@ export default function Navbar({
               }}
             >
               {theme === 'dark' ? <Sun size={13} color="#fbbf24" /> : <Moon size={13} color="#38bdf8" />}
-              <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+              <span className="theme-toggle-label">{theme === 'dark' ? 'Light' : 'Dark'}</span>
             </button>
 
             {/* Helpline Phone */}
@@ -190,10 +191,11 @@ export default function Navbar({
                 alignItems: 'center',
                 gap: '5px',
                 whiteSpace: 'nowrap',
+                fontSize: '0.8rem',
               }}
             >
-              <Phone size={13} color="#fbbf24" />
-              <span>{CLINIC_INFO.phoneFormatted}</span>
+              <Phone size={12} color="#fbbf24" />
+              <span className="topbar-phone">{CLINIC_INFO.phoneFormatted}</span>
             </a>
           </div>
         </div>
@@ -218,10 +220,11 @@ export default function Navbar({
           {/* Logo & Brand Identity */}
           <a
             href="#"
+            className="nav-brand-link"
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: '10px',
               textDecoration: 'none',
               flexShrink: 0,
             }}
@@ -229,6 +232,7 @@ export default function Navbar({
             <img
               src={ASSETS.logo}
               alt="Sampoorna Diagnostic Center Logo"
+              className="nav-brand-logo"
               style={{
                 height: '46px',
                 width: 'auto',
@@ -237,10 +241,12 @@ export default function Navbar({
                 padding: '2px',
                 boxShadow: '0 4px 12px rgba(3, 78, 162, 0.25)',
                 border: '1px solid rgba(3, 78, 162, 0.15)',
+                flexShrink: 0,
               }}
             />
             <div style={{ whiteSpace: 'nowrap' }}>
               <div
+                className="nav-brand-title"
                 style={{
                   fontSize: '1.22rem',
                   fontWeight: 800,
@@ -268,6 +274,7 @@ export default function Navbar({
                 </span>
               </div>
               <div
+                className="nav-brand-subtitle"
                 style={{
                   fontSize: '0.78rem',
                   color: 'var(--text-secondary)',
@@ -548,14 +555,15 @@ export default function Navbar({
             {/* Book Appointment CTA */}
             <button
               onClick={onOpenBooking}
-              className="btn-primary"
+              className="btn-primary nav-cta-btn"
               style={{
                 padding: '0.62rem 1.4rem',
                 fontSize: '0.88rem',
               }}
             >
-              <Calendar size={15} />
-              <span>Book Test / Scan</span>
+              <Calendar size={15} style={{ flexShrink: 0 }} />
+              <span className="nav-cta-text-full">Book Test / Scan</span>
+              <span className="nav-cta-text-short">Book Scan</span>
             </button>
 
             {/* Mobile Hamburger Button */}
@@ -571,6 +579,7 @@ export default function Navbar({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                flexShrink: 0,
               }}
               className="mobile-hamburger"
               aria-label="Toggle Navigation Menu"
@@ -724,6 +733,12 @@ export default function Navbar({
       </nav>
 
       <style>{`
+        .topbar-hours-short { display: none; }
+        .topbar-hours-full { display: inline; }
+        .topbar-landmark { display: none; }
+        .nav-cta-text-short { display: none; }
+        .nav-cta-text-full { display: inline; }
+
         @media (min-width: 1040px) {
           .desktop-menu { display: flex !important; }
           .desktop-btn { display: inline-flex !important; }
@@ -731,6 +746,29 @@ export default function Navbar({
         }
         @media (min-width: 768px) {
           .topbar-landmark { display: inline-flex !important; }
+        }
+        @media (max-width: 767px) {
+          .topbar-hours-full { display: none !important; }
+          .topbar-hours-short { display: inline !important; font-size: 0.74rem; }
+        }
+        @media (max-width: 580px) {
+          .topbar-kpme { display: none !important; }
+          .nav-cta-btn {
+            padding: 0.48rem 0.8rem !important;
+            font-size: 0.8rem !important;
+          }
+          .nav-cta-text-full { display: none !important; }
+          .nav-cta-text-short { display: inline !important; }
+        }
+        @media (max-width: 440px) {
+          .theme-toggle-label { display: none !important; }
+          .nav-brand-logo { height: 38px !important; }
+          .nav-brand-title { font-size: 1.05rem !important; }
+          .nav-brand-subtitle { font-size: 0.7rem !important; }
+        }
+        @media (max-width: 370px) {
+          .topbar-hours-short { display: none !important; }
+          .topbar-phone { font-size: 0.75rem !important; }
         }
       `}</style>
     </header>

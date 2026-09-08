@@ -86,7 +86,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '1.2rem',
+          padding: '1rem',
         }}
       >
         <motion.div
@@ -94,7 +94,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.92, y: 20 }}
           onClick={(e) => e.stopPropagation()}
-          className="glass-panel"
+          className="glass-panel appointment-modal-box"
           style={{
             maxWidth: '560px',
             width: '100%',
@@ -229,7 +229,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
                 <label style={{ display: 'block', fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
                   Appointment Mode
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div className="modal-mode-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   <button
                     type="button"
                     onClick={() => setFormData({ ...formData, type: 'Center Visit' })}
@@ -277,7 +277,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
               </div>
 
               {/* Date & Time */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              <div className="modal-datetime-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
                     Preferred Date
@@ -416,6 +416,23 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
           )}
         </motion.div>
       </motion.div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .appointment-modal-box {
+            padding: 1.4rem 1rem !important;
+            max-height: 94vh !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .modal-mode-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .modal-datetime-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </AnimatePresence>
   );
 }

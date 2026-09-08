@@ -111,6 +111,7 @@ export default function App() {
 
       {/* Floating Quick Action Widget for Mobile / Quick Access */}
       <div
+        className="floating-quick-widget"
         style={{
           position: 'fixed',
           bottom: '24px',
@@ -118,7 +119,7 @@ export default function App() {
           zIndex: 999,
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px',
+          gap: '10px',
         }}
       >
         {/* WhatsApp Direct Floating Button */}
@@ -126,9 +127,10 @@ export default function App() {
           href={`https://wa.me/${CLINIC_INFO.whatsapp}?text=${encodeURIComponent('Hello Sampoorna Diagnostic Center, I would like to inquire about booking a test / scan.')}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="floating-action-btn"
           style={{
-            width: '52px',
-            height: '52px',
+            width: '48px',
+            height: '48px',
             borderRadius: '50%',
             background: '#00a859',
             boxShadow: '0 8px 25px rgba(0, 168, 89, 0.45)',
@@ -143,15 +145,16 @@ export default function App() {
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           title="Chat on WhatsApp (+91 8660487449)"
         >
-          <MessageSquare size={26} />
+          <MessageSquare size={24} />
         </a>
 
         {/* Quick Phone Floating Button */}
         <a
           href={`tel:${CLINIC_INFO.phone}`}
+          className="floating-action-btn"
           style={{
-            width: '52px',
-            height: '52px',
+            width: '48px',
+            height: '48px',
             borderRadius: '50%',
             background: '#034ea2',
             boxShadow: '0 8px 25px rgba(3, 78, 162, 0.45)',
@@ -166,9 +169,27 @@ export default function App() {
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           title={`Call Helpline (${CLINIC_INFO.phoneFormatted})`}
         >
-          <Phone size={24} />
+          <Phone size={22} />
         </a>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .floating-quick-widget {
+            bottom: 16px !important;
+            right: 16px !important;
+            gap: 8px !important;
+          }
+          .floating-action-btn {
+            width: 42px !important;
+            height: 42px !important;
+          }
+          .floating-action-btn svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

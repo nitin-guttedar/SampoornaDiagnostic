@@ -294,7 +294,7 @@ export default function ContactSection({ onOpenBooking, theme }) {
               </p>
             </div>
 
-            <div style={{ display: 'flex', gap: '12px' }}>
+            <div className="contact-actions-row" style={{ display: 'flex', gap: '12px' }}>
               <a
                 href="https://maps.google.com/?q=Doomlight+Circle+Madhugiri+Karnataka"
                 target="_blank"
@@ -323,6 +323,11 @@ export default function ContactSection({ onOpenBooking, theme }) {
         @media (max-width: 992px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 540px) {
+          .contact-actions-row {
+            flex-direction: column !important;
           }
         }
       `}</style>

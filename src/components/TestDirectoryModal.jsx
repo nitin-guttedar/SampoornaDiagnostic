@@ -74,7 +74,7 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '1.5rem',
+          padding: '1rem',
         }}
       >
         <motion.div
@@ -82,7 +82,7 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.94, y: 20 }}
           onClick={(e) => e.stopPropagation()}
-          className="glass-panel"
+          className="glass-panel directory-modal-box"
           style={{
             maxWidth: '920px',
             width: '100%',
@@ -96,8 +96,9 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
         >
           {/* Header */}
           <div
+            className="directory-header"
             style={{
-              padding: '1.5rem 2rem',
+              padding: '1.2rem 1.8rem',
               borderBottom: '1px solid var(--border-light)',
               display: 'flex',
               justifyContent: 'space-between',
@@ -108,7 +109,7 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
               <span className="glass-badge glass-badge-blue" style={{ fontSize: '0.72rem' }}>
                 Complete Clinical Catalog
               </span>
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--heading-color)', marginTop: '0.4rem' }}>
+              <h3 style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.45rem)', color: 'var(--heading-color)', marginTop: '0.4rem' }}>
                 Diagnostic Tests, Scans & Pricing Guide
               </h3>
             </div>
@@ -121,6 +122,7 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
                 padding: '8px',
                 borderRadius: '50%',
                 cursor: 'pointer',
+                flexShrink: 0,
               }}
             >
               <X size={20} />
@@ -129,19 +131,20 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
 
           {/* Search & Filter Bar */}
           <div
+            className="directory-search-bar"
             style={{
-              padding: '1rem 2rem',
+              padding: '0.9rem 1.8rem',
               background: 'var(--bg-tertiary)',
               display: 'flex',
-              gap: '12px',
+              gap: '10px',
               flexWrap: 'wrap',
               borderBottom: '1px solid var(--border-light)',
             }}
           >
-            <div style={{ position: 'relative', flex: '1', minWidth: '240px' }}>
+            <div style={{ position: 'relative', flex: '1', minWidth: '200px' }}>
               <input
                 type="text"
-                placeholder="Search any test, scan or symptom (e.g. CBC, CT Brain, Thyroid, Urine)..."
+                placeholder="Search test, scan or symptom..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 style={{
@@ -151,25 +154,34 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
                   border: '1px solid var(--border-light)',
                   borderRadius: '10px',
                   color: 'var(--text-primary)',
-                  fontSize: '0.9rem',
+                  fontSize: '0.88rem',
                   outline: 'none',
                 }}
               />
               <Search size={16} color="#64748b" style={{ position: 'absolute', left: '12px', top: '13px' }} />
             </div>
 
-            <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '4px' }}>
+            <div
+              className="directory-cat-scroll"
+              style={{
+                display: 'flex',
+                gap: '6px',
+                overflowX: 'auto',
+                paddingBottom: '4px',
+                WebkitOverflowScrolling: 'touch',
+              }}
+            >
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   style={{
-                    padding: '8px 14px',
+                    padding: '7px 12px',
                     borderRadius: '8px',
                     background: activeCategory === cat ? '#034ea2' : 'var(--bg-modal)',
                     border: activeCategory === cat ? '1px solid #60a5fa' : '1px solid var(--border-light)',
                     color: activeCategory === cat ? '#ffffff' : 'var(--text-primary)',
-                    fontSize: '0.82rem',
+                    fontSize: '0.8rem',
                     fontWeight: 600,
                     cursor: 'pointer',
                     whiteSpace: 'nowrap',
@@ -182,61 +194,62 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
           </div>
 
           {/* Test Table / List */}
-          <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem 2rem' }}>
+          <div className="directory-content" style={{ flex: 1, overflowY: 'auto', padding: '1.2rem 1.8rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {filtered.length > 0 ? (
                 filtered.map((test, i) => (
                   <div
                     key={i}
+                    className="directory-test-row"
                     style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
-                      padding: '14px 18px',
+                      padding: '12px 16px',
                       borderRadius: '12px',
                       background: 'var(--bg-tertiary)',
                       border: '1px solid var(--border-light)',
-                      gap: '16px',
+                      gap: '12px',
                     }}
                   >
                     <div style={{ flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
                         <span
                           style={{
-                            fontSize: '0.72rem',
+                            fontSize: '0.7rem',
                             fontWeight: 700,
                             color: '#00a859',
                             background: 'rgba(0, 168, 89, 0.12)',
                             border: '1px solid rgba(0, 168, 89, 0.25)',
-                            padding: '2px 8px',
+                            padding: '2px 7px',
                             borderRadius: '4px',
                           }}
                         >
                           {test.category}
                         </span>
-                        <h4 style={{ fontSize: '1.02rem', color: 'var(--heading-color)' }}>{test.name}</h4>
+                        <h4 style={{ fontSize: '0.96rem', color: 'var(--heading-color)' }}>{test.name}</h4>
                       </div>
 
-                      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
+                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          <Clock size={13} color="#f59e0b" />
-                          <span>Turnaround: {test.tat}</span>
+                          <Clock size={12} color="#f59e0b" />
+                          <span>TAT: {test.tat}</span>
                         </span>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          <AlertCircle size={13} color="#0284c7" />
+                          <AlertCircle size={12} color="#0284c7" />
                           <span>Prep: {test.prep}</span>
                         </span>
                       </div>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <button
                         onClick={() => {
                           onClose();
                           onSelectTest(test.name);
                         }}
-                        className="btn-primary"
-                        style={{ padding: '7px 16px', fontSize: '0.82rem' }}
+                        className="btn-primary directory-book-btn"
+                        style={{ padding: '6px 14px', fontSize: '0.8rem' }}
                       >
                         <Calendar size={13} />
                         <span>Book</span>
@@ -245,7 +258,7 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
                   </div>
                 ))
               ) : (
-                <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
+                <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-muted)' }}>
                   No tests found matching your search term. Call our helpline at +91 8660487449 for custom requirements.
                 </div>
               )}
@@ -253,6 +266,31 @@ export default function TestDirectoryModal({ isOpen, onClose, onSelectTest, them
           </div>
         </motion.div>
       </motion.div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .directory-modal-box {
+            height: 92vh !important;
+          }
+          .directory-header {
+            padding: 1rem !important;
+          }
+          .directory-search-bar {
+            padding: 0.8rem 1rem !important;
+          }
+          .directory-content {
+            padding: 0.8rem 1rem !important;
+          }
+          .directory-test-row {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+          }
+          .directory-book-btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+        }
+      `}</style>
     </AnimatePresence>
   );
 }

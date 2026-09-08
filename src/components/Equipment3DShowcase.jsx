@@ -138,10 +138,11 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
 
         {/* Equipment Selector Ribbon */}
         <div
+          className="equipment-pills-scroll"
           style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '10px',
+            gap: '8px',
             flexWrap: 'wrap',
             marginBottom: '2.5rem',
           }}
@@ -159,25 +160,26 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
               <button
                 key={item.key}
                 onClick={() => setSelectedKey(item.key)}
+                className="equipment-pill-btn"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  padding: '10px 18px',
+                  gap: '6px',
+                  padding: '9px 16px',
                   borderRadius: '9999px',
                   background: active
                     ? 'linear-gradient(135deg, #034ea2 0%, #00a859 100%)'
                     : 'var(--bg-card)',
                   border: active ? '1.5px solid #00a859' : '1px solid var(--border-light)',
                   color: active ? '#ffffff' : 'var(--text-primary)',
-                  fontSize: '0.88rem',
+                  fontSize: '0.86rem',
                   fontWeight: active ? 700 : 600,
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',
                   boxShadow: active ? '0 6px 20px rgba(0, 168, 89, 0.3)' : 'var(--shadow-card)',
                 }}
               >
-                <Icon size={16} color={active ? '#ffffff' : 'var(--text-muted)'} />
+                <Icon size={15} color={active ? '#ffffff' : 'var(--text-muted)'} style={{ flexShrink: 0 }} />
                 <span>{item.label}</span>
               </button>
             );
@@ -196,7 +198,7 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
         >
           {/* 3D Canvas Card */}
           <div
-            className="glass-panel"
+            className="glass-panel equipment-canvas-card"
             style={{
               position: 'relative',
               overflow: 'hidden',
@@ -348,6 +350,7 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
                   {currentEquipment.specs.map((spec, i) => (
                     <div
                       key={i}
+                      className="equipment-spec-row"
                       style={{
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -357,10 +360,11 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
                         background: 'var(--bg-tertiary)',
                         border: '1px solid var(--border-light)',
                         fontSize: '0.86rem',
+                        gap: '8px',
                       }}
                     >
-                      <span style={{ color: 'var(--text-secondary)' }}>{spec.label}</span>
-                      <span style={{ color: 'var(--text-primary)', fontWeight: 600, textAlign: 'right' }}>
+                      <span style={{ color: 'var(--text-secondary)', flexShrink: 0 }}>{spec.label}</span>
+                      <span className="equipment-spec-value" style={{ color: 'var(--text-primary)', fontWeight: 600, textAlign: 'right' }}>
                         {spec.value}
                       </span>
                     </div>
@@ -391,7 +395,7 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
                         color: 'var(--text-primary)',
                       }}
                     >
-                      <CheckCircle size={15} color="#00a859" />
+                      <CheckCircle size={15} color="#00a859" style={{ flexShrink: 0 }} />
                       <span>{ind}</span>
                     </div>
                   ))}
@@ -403,11 +407,12 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
             <div style={{ marginTop: '1.8rem', paddingTop: '1.2rem', borderTop: '1px solid var(--border-light)' }}>
               <button
                 onClick={onOpenBooking}
-                className="btn-primary"
-                style={{ width: '100%', padding: '0.88rem', fontSize: '0.94rem' }}
+                className="btn-primary equipment-book-btn"
+                style={{ width: '100%', padding: '0.88rem 1.2rem', fontSize: '0.94rem' }}
               >
-                <span>Book Diagnostic Appointment for {currentEquipment.name}</span>
-                <ArrowRight size={16} />
+                <span className="equip-btn-full">Book Diagnostic Appointment for {currentEquipment.name}</span>
+                <span className="equip-btn-short">Book Test / Scan Now</span>
+                <ArrowRight size={16} style={{ flexShrink: 0 }} />
               </button>
             </div>
           </div>
@@ -415,9 +420,35 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
       </div>
 
       <style>{`
+        .equip-btn-short { display: none; }
+        .equip-btn-full { display: inline; }
+
         @media (max-width: 992px) {
           .equipment-grid {
             grid-template-columns: 1fr !important;
+          }
+          .equipment-canvas-card {
+            min-height: 380px !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .equipment-canvas-card {
+            min-height: 320px !important;
+          }
+          .equipment-spec-row {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 2px !important;
+          }
+          .equipment-spec-value {
+            text-align: left !important;
+          }
+          .equip-btn-full { display: none !important; }
+          .equip-btn-short { display: inline !important; }
+          .equipment-pill-btn {
+            padding: 7px 12px !important;
+            font-size: 0.8rem !important;
           }
         }
       `}</style>

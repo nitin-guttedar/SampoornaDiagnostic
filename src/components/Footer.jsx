@@ -208,7 +208,7 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
           correlation by certified physicians. Serving Madhugiri, Pavagada, Koratagere, Sira, and Tumkur district.
         </div>
 
-        {/* Bottom Copyright */}
+        {/* Bottom Copyright & Credits */}
         <div
           style={{
             display: 'flex',
@@ -224,10 +224,28 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
           <div style={{ color: '#94a3b8' }}>
             © {new Date().getFullYear()} Sampoorna Diagnostic Center (ಸಂಪೂರ್ಣ ಡಯಾಗ್ನೋಸ್ಟಿಕ್ ಸೆಂಟರ್). All rights reserved.
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ color: '#94a3b8' }}>Dedicated to healthcare excellence in Madhugiri</span>
-            <span>•</span>
-            <span style={{ color: '#10b981' }}>Accurate Diagnosis, Better Care</span>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span style={{ color: '#94a3b8' }}>
+              Designed By{' '}
+              <a
+                href="https://www.damadigitalanalytics.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#38bdf8',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#7dd3fc')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#38bdf8')}
+              >
+                DAMA Digital Analytics
+              </a>
+            </span>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+            <span style={{ color: '#10b981', fontWeight: 600 }}>Accurate Diagnosis, Better Care</span>
           </div>
         </div>
       </div>

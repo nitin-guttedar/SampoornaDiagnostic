@@ -21,7 +21,7 @@ export default function ReportVerification({ onOpenBooking, theme }) {
   return (
     <section className="container" style={{ marginBottom: '3.5rem', marginTop: '1rem' }}>
       <div
-        className="glass-panel"
+        className="glass-panel report-card-panel"
         style={{
           padding: '2.5rem',
           background:
@@ -44,7 +44,7 @@ export default function ReportVerification({ onOpenBooking, theme }) {
         >
           {/* Left Column: Instant WhatsApp / Online Report Download */}
           <div>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '0.8rem' }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '0.8rem', flexWrap: 'wrap' }}>
               <span className="glass-badge glass-badge-green" style={{ fontSize: '0.74rem' }}>
                 <CheckCircle2 size={13} />
                 <span>Paperless Digital Healthcare</span>
@@ -54,7 +54,7 @@ export default function ReportVerification({ onOpenBooking, theme }) {
               </span>
             </div>
 
-            <h3 style={{ fontSize: '1.85rem', color: 'var(--heading-color)', marginBottom: '0.8rem' }}>
+            <h3 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.85rem)', color: 'var(--heading-color)', marginBottom: '0.8rem' }}>
               Download Lab & Imaging Reports Online
             </h3>
 
@@ -63,15 +63,16 @@ export default function ReportVerification({ onOpenBooking, theme }) {
               images, and laboratory test results instantly with your Bill No. or registered mobile number.
             </p>
 
-            <form onSubmit={handleSearch} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <form onSubmit={handleSearch} className="report-search-form" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               <input
                 type="text"
                 placeholder="Enter Bill No. (e.g. SDC-4829)"
                 value={billNo}
                 onChange={(e) => setBillNo(e.target.value)}
+                className="report-input"
                 style={{
                   flex: 1,
-                  minWidth: '180px',
+                  minWidth: '170px',
                   padding: '11px 16px',
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border-light)',
@@ -86,9 +87,10 @@ export default function ReportVerification({ onOpenBooking, theme }) {
                 placeholder="Or Mobile Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                className="report-input"
                 style={{
                   flex: 1,
-                  minWidth: '160px',
+                  minWidth: '150px',
                   padding: '11px 16px',
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border-light)',
@@ -98,7 +100,7 @@ export default function ReportVerification({ onOpenBooking, theme }) {
                   outline: 'none',
                 }}
               />
-              <button type="submit" className="btn-primary" style={{ padding: '11px 22px' }}>
+              <button type="submit" className="btn-primary report-submit-btn" style={{ padding: '11px 22px' }}>
                 <Search size={16} />
                 <span>Find Report</span>
               </button>
@@ -126,7 +128,7 @@ export default function ReportVerification({ onOpenBooking, theme }) {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <FileText size={20} color="#00a859" />
+                    <FileText size={20} color="#00a859" style={{ flexShrink: 0 }} />
                     <div>
                       <div style={{ color: 'var(--heading-color)', fontWeight: 700, fontSize: '0.9rem' }}>
                         Report Verified • Digital X-Ray / CT Study (Bill #{billNo || 'SDC-2026-08'})
@@ -182,6 +184,23 @@ export default function ReportVerification({ onOpenBooking, theme }) {
         @media (max-width: 992px) {
           .report-grid {
             grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .report-card-panel {
+            padding: 1.4rem 1rem !important;
+          }
+          .report-search-form {
+            flex-direction: column !important;
+          }
+          .report-input {
+            width: 100% !important;
+            min-width: 0 !important;
+          }
+          .report-submit-btn {
+            width: 100% !important;
+            justify-content: center !important;
           }
         }
       `}</style>

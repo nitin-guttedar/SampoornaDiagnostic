@@ -59,7 +59,7 @@ export default function AboutSection({ theme }) {
 
             {/* Overlapping KPME Official Board Certificate Asset */}
             <div
-              className="glass-panel"
+              className="glass-panel about-kpme-badge"
               style={{
                 position: 'absolute',
                 bottom: '-25px',
@@ -90,7 +90,7 @@ export default function AboutSection({ theme }) {
 
             {/* Floating Experience Badge */}
             <div
-              className="glass-panel"
+              className="glass-panel about-exp-badge"
               style={{
                 position: 'absolute',
                 top: '-18px',
@@ -121,16 +121,16 @@ export default function AboutSection({ theme }) {
               <span>{ABOUT_CONTENT.registration}</span>
             </span>
 
-            <h2 style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: 'var(--heading-color)', margin: '0.8rem 0 1rem 0' }}>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--heading-color)', margin: '0.8rem 0 1rem 0' }}>
               Reliable, Evidence-Based Diagnostics Close to Home
             </h2>
 
-            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.4rem' }}>
+            <p style={{ fontSize: '0.96rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.4rem' }}>
               {ABOUT_CONTENT.lead}
             </p>
 
             {/* Mission & Vision Mini Cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '1.6rem' }}>
+            <div className="about-mv-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '1.6rem' }}>
               <div
                 style={{
                   background: 'rgba(3, 78, 162, 0.08)',
@@ -169,6 +169,7 @@ export default function AboutSection({ theme }) {
               Our 4 Core Clinical Values
             </h3>
             <div
+              className="about-values-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
@@ -203,6 +204,7 @@ export default function AboutSection({ theme }) {
 
             {/* Technology & Infrastructure Highlights */}
             <div
+              className="about-infra-card"
               style={{
                 background: 'var(--bg-card)',
                 padding: '14px 18px',
@@ -214,7 +216,7 @@ export default function AboutSection({ theme }) {
                 boxShadow: 'var(--shadow-card)',
               }}
             >
-              <div style={{ display: 'flex', gap: '8px' }}>
+              <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
                 <Zap size={20} color="#f59e0b" />
                 <ThermometerSnowflake size={20} color="#0284c7" />
               </div>
@@ -231,7 +233,30 @@ export default function AboutSection({ theme }) {
         @media (max-width: 992px) {
           .about-grid {
             grid-template-columns: 1fr !important;
-            gap: 3.5rem !important;
+            gap: 2.5rem !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .about-kpme-badge {
+            position: static !important;
+            max-width: 100% !important;
+            margin-top: 14px !important;
+          }
+          .about-exp-badge {
+            top: 10px !important;
+            left: 10px !important;
+            padding: 8px 12px !important;
+          }
+          .about-mv-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .about-values-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .about-infra-card {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 8px !important;
           }
         }
       `}</style>
