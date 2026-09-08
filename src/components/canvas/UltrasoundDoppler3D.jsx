@@ -37,7 +37,6 @@ export default function UltrasoundDoppler3D() {
   return (
     <group position={[0, -0.7, 0]} scale={1.15}>
       {/* ===== ULTRASOUND CONSOLE CART ===== */}
-      {/* Mobile Base & Casters */}
       <mesh position={[0.7, 0.1, 0]} castShadow>
         <boxGeometry args={[1.0, 0.18, 0.9]} />
         <meshStandardMaterial color="#1e293b" roughness={0.4} metalness={0.6} />
