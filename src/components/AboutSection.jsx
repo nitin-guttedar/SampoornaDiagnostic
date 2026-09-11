@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ABOUT_CONTENT } from '../data/content';
+import { ABOUT_CONTENT, DR_SUHAS_INFO } from '../data/content';
 import { ASSETS, CLINIC_INFO } from '../data/assets';
 import {
   ShieldCheck,
@@ -227,6 +227,266 @@ export default function AboutSection({ theme }) {
             </div>
           </motion.div>
         </div>
+
+        {/* Dedicated Medical Leadership Spotlight: Dr. Suhas Bhoovanalli */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            marginTop: '4rem',
+            background:
+              theme === 'light'
+                ? 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #eff6ff 100%)'
+                : 'linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(6, 78, 59, 0.25) 50%, rgba(30, 58, 138, 0.25) 100%)',
+            borderRadius: '24px',
+            border: '1.5px solid var(--border-green)',
+            padding: '2.5rem',
+            boxShadow: 'var(--shadow-card)',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+          className="doctor-spotlight-card"
+        >
+          {/* Subtle watermark accent */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '-30px',
+              right: '-30px',
+              width: '200px',
+              height: '200px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(0, 168, 89, 0.12) 0%, transparent 70%)',
+              pointerEvents: 'none',
+            }}
+          />
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '320px 1fr',
+              gap: '2.5rem',
+              alignItems: 'center',
+            }}
+            className="doctor-spotlight-grid"
+          >
+            {/* Doctor Photo Column */}
+            <div style={{ position: 'relative' }}>
+              <div
+                style={{
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                  border: '3px solid #ffffff',
+                  boxShadow: '0 12px 30px rgba(0,0,0,0.15)',
+                  background: '#f8fafc',
+                  aspectRatio: '3 / 4',
+                  position: 'relative',
+                }}
+              >
+                <img
+                  src={DR_SUHAS_INFO.image}
+                  alt="Dr. Suhas Bhoovanalli - Consultant Radiologist with Sampoorna Diagnostic Logo on Apron"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+
+                {/* Overlaid Verified Doctor Badge */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '12px',
+                    left: '12px',
+                    right: '12px',
+                    background: 'rgba(15, 23, 42, 0.85)',
+                    backdropFilter: 'blur(8px)',
+                    padding: '8px 12px',
+                    borderRadius: '10px',
+                    border: '1px solid rgba(0, 168, 89, 0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <UserCheck size={18} color="#00a859" />
+                  <div>
+                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#ffffff' }}>
+                      Official Medical Staff
+                    </div>
+                    <div style={{ fontSize: '0.68rem', color: '#94a3b8' }}>
+                      Branded Apron & Verified Clinical Credentials
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Verified Pill */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-12px',
+                  right: '-12px',
+                  background: '#00a859',
+                  color: '#ffffff',
+                  padding: '6px 14px',
+                  borderRadius: '9999px',
+                  fontSize: '0.76rem',
+                  fontWeight: 700,
+                  boxShadow: '0 4px 14px rgba(0, 168, 89, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                }}
+              >
+                <ShieldCheck size={14} />
+                <span>KPME Registered</span>
+              </div>
+            </div>
+
+            {/* Doctor Info Column */}
+            <div>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '0.8rem' }}>
+                <span className="glass-badge glass-badge-green">
+                  <Award size={13} />
+                  <span>Medical Leadership</span>
+                </span>
+                <span className="glass-badge glass-badge-blue">
+                  <HeartHandshake size={13} />
+                  <span>{DR_SUHAS_INFO.experience}</span>
+                </span>
+              </div>
+
+              <h3
+                style={{
+                  fontSize: 'clamp(1.7rem, 3vw, 2.2rem)',
+                  color: 'var(--heading-color)',
+                  margin: '0 0 4px 0',
+                  fontWeight: 800,
+                }}
+              >
+                {DR_SUHAS_INFO.name}
+              </h3>
+
+              <div
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: 700,
+                  color: '#034ea2',
+                  marginBottom: '1rem',
+                }}
+              >
+                {DR_SUHAS_INFO.title} • <span style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>{DR_SUHAS_INFO.qualifications}</span>
+              </div>
+
+              <p
+                style={{
+                  fontSize: '0.94rem',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.65,
+                  marginBottom: '1.4rem',
+                }}
+              >
+                {DR_SUHAS_INFO.bio}
+              </p>
+
+              {/* Specialties Pill Badges */}
+              <div style={{ marginBottom: '1.4rem' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+                  Clinical Specialties & Modalities
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                  {DR_SUHAS_INFO.specialties.map((spec, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        background: 'var(--bg-card)',
+                        border: '1px solid var(--border-light)',
+                        padding: '6px 12px',
+                        borderRadius: '8px',
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        color: 'var(--text-primary)',
+                      }}
+                    >
+                      <CheckCircle size={13} color="#00a859" />
+                      <span>{spec}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Doctor's Patient Care Commitment Quote */}
+              <div
+                style={{
+                  background: 'rgba(3, 78, 162, 0.06)',
+                  borderLeft: '4px solid #034ea2',
+                  padding: '12px 16px',
+                  borderRadius: '0 12px 12px 0',
+                  marginBottom: '1.6rem',
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: '0.88rem',
+                    fontStyle: 'italic',
+                    color: 'var(--heading-color)',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  "{DR_SUHAS_INFO.quote}"
+                </p>
+                <div style={{ fontSize: '0.76rem', color: '#034ea2', fontWeight: 700, marginTop: '6px' }}>
+                  — {DR_SUHAS_INFO.name}, Sampoorna Diagnostic Center
+                </div>
+              </div>
+
+              {/* Consultation / Appointment CTAs */}
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <a
+                  href={`https://wa.me/${CLINIC_INFO.whatsapp}?text=${encodeURIComponent(`Hello Dr. Suhas Bhoovanalli / Sampoorna Diagnostic, I would like to consult or book an imaging scan.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{
+                    padding: '10px 20px',
+                    fontSize: '0.9rem',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <HeartHandshake size={16} />
+                  <span>Book Consultation / Scan Review</span>
+                </a>
+
+                <a
+                  href={`tel:${CLINIC_INFO.phone}`}
+                  className="btn-outline"
+                  style={{
+                    padding: '10px 18px',
+                    fontSize: '0.9rem',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <span>Helpline: {CLINIC_INFO.phoneFormatted}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       <style>{`
@@ -235,8 +495,24 @@ export default function AboutSection({ theme }) {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
           }
+          .doctor-spotlight-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          .doctor-spotlight-card {
+            padding: 1.8rem !important;
+          }
         }
         @media (max-width: 640px) {
+          .doctor-spotlight-card {
+            padding: 1.3rem 1rem !important;
+            border-radius: 18px !important;
+            margin-top: 2.5rem !important;
+          }
+          .doctor-spotlight-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.4rem !important;
+          }
           .about-kpme-badge {
             position: static !important;
             max-width: 100% !important;

@@ -88,6 +88,12 @@
   padding: 0;
 }
 
+html, body, #root, .app-container {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -99,7 +105,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   min-height: 100vh;
   background-color: var(--bg-primary);
   background-image: 
@@ -108,6 +113,10 @@ body {
     radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
   background-attachment: fixed;
   transition: background var(--transition-normal);
+}
+
+img, canvas, svg, video {
+  max-width: 100%;
 }
 
 [data-theme="light"] body {
@@ -426,7 +435,7 @@ section[id] {
     padding: 2.5rem 0;
   }
   .container {
-    padding: 0 0.85rem;
+    padding: 0 0.75rem;
   }
   .btn-primary, .btn-green, .btn-secondary {
     white-space: normal !important;
@@ -434,6 +443,21 @@ section[id] {
     line-height: 1.35;
     padding: 0.75rem 1.2rem;
     font-size: 0.88rem;
+  }
+  .glass-badge {
+    padding: 0.32rem 0.7rem !important;
+    font-size: 0.75rem !important;
+    white-space: normal !important;
+  }
+  h1 {
+    font-size: clamp(1.75rem, 6.5vw, 2.4rem) !important;
+    line-height: 1.18 !important;
+    word-break: break-word;
+  }
+  h2 {
+    font-size: clamp(1.45rem, 5.5vw, 2rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word;
   }
 }
 

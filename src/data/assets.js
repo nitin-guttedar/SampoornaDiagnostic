@@ -10,6 +10,13 @@ export const ASSETS = {
   brandMockup: '/assets/91f87fdc-5611-410c-9e58-e0a7f175922c.jpg',
   letterheadClinical: '/assets/2a518384-9320-4154-bfaf-ac8b470b6df6.jpg',
   letterheadClean: '/assets/6d2c65e3-b6f4-47c5-bad8-d5fb9cfa11c9.jpg',
+  drSuhasBhoovanalli: '/assets/dr_suhas_bhoovanalli.jpg',
+  equipToshibaCt: '/assets/equip_toshiba_ct.jpg',
+  equipSamsungV7: '/assets/equip_samsung_v7_ultrasound.jpg',
+  equipDigitalXrayDr: '/assets/equip_digital_xray_dr.jpg',
+  equipBplTreadmill: '/assets/equip_bpl_treadmill.jpg',
+  equipBplEcg: '/assets/equip_bpl_ecg.jpg',
+  equipLabAnalyzers: '/assets/equip_lab_analyzers.jpg',
 };
 
 export const CLINIC_INFO = {
@@ -22,8 +29,11 @@ export const CLINIC_INFO = {
   phoneFormatted: "+91 86604 87449",
   whatsapp: "918660487449",
   email: "sdclab.madhugiri@gmail.com",
+  gmailComposeUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=sdclab.madhugiri@gmail.com",
+  googleMapsUrl: "https://maps.app.goo.gl/3GZijJuPQ3pDXCfb8?g_st=ic",
   kpmeReg: "TMK01236ALCDS",
   headDoctor: "Dr. Somashekhar M.B.",
+  leadConsultant: "Dr. Suhas Bhoovanalli",
   landmarkMilestone: "16-Slice Multislice CT Scan – 1st Time in Madhugiri",
   workingHours: {
     weekdays: "Mon – Sat: 8:00 AM – 8:00 PM",

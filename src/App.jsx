@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Equipment3DShowcase from './components/Equipment3DShowcase';
+import InstallationEquipmentSection from './components/InstallationEquipmentSection';
 import ServicesSection from './components/ServicesSection';
 import AboutSection from './components/AboutSection';
 import FacilityGallery from './components/FacilityGallery';
-import ReportVerification from './components/ReportVerification';
 import BlogSection from './components/BlogSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -64,14 +64,14 @@ export default function App() {
           theme={theme}
         />
 
-        {/* About Center, Leadership & Infrastructure */}
-        <AboutSection theme={theme} />
-
-        {/* Digital Report Retrieval Strip */}
-        <ReportVerification
-          onOpenBooking={() => handleOpenBooking()}
+        {/* State-of-the-Art Machines Under Installation */}
+        <InstallationEquipmentSection
+          onOpenBooking={(serviceName) => handleOpenBooking(serviceName)}
           theme={theme}
         />
+
+        {/* About Center, Leadership & Infrastructure */}
+        <AboutSection theme={theme} />
 
         {/* Facility Gallery & Authentic Asset Banners */}
         <FacilityGallery theme={theme} />

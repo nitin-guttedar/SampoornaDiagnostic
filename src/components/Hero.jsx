@@ -14,6 +14,7 @@ import {
   Microscope,
   Radio,
   FileSearch,
+  ExternalLink,
 } from 'lucide-react';
 
 export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
@@ -278,14 +279,22 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
                 background: 'var(--bg-card)',
               }}
             >
-              <div className="hero-telemetry-item">
-                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Facility Location
+              <a
+                href={CLINIC_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-telemetry-item"
+                title="Open Madhugiri Center on Google Maps"
+                style={{ textDecoration: 'none', display: 'block' }}
+              >
+                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                  <span>Facility Location</span>
+                  <ExternalLink size={10} color="#00a859" />
                 </span>
-                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--heading-color)' }}>
+                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--heading-color)', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#00a859')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--heading-color)')}>
                   Doomlight Circle, Madhugiri
                 </p>
-              </div>
+              </a>
               <div className="hero-telemetry-divider" style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
               <div className="hero-telemetry-item">
                 <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>

@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Building,
   Calendar,
+  ExternalLink,
 } from 'lucide-react';
 
 export default function ContactSection({ onOpenBooking, theme }) {
@@ -68,9 +69,19 @@ export default function ContactSection({ onOpenBooking, theme }) {
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '0.5rem' }}>
                     {CLINIC_INFO.address}
                   </p>
-                  <div style={{ fontSize: '0.82rem', color: '#00a859', fontWeight: 700 }}>
+                  <div style={{ fontSize: '0.82rem', color: '#00a859', fontWeight: 700, marginBottom: '0.6rem' }}>
                     Landmark: Near Doomlight Circle (Heart of Madhugiri)
                   </div>
+                  <a
+                    href={CLINIC_INFO.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{ padding: '6px 14px', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                  >
+                    <Navigation size={13} />
+                    <span>Get Directions on Google Maps</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -146,9 +157,27 @@ export default function ContactSection({ onOpenBooking, theme }) {
                   <h4 style={{ fontSize: '1.08rem', color: 'var(--heading-color)', marginBottom: '4px' }}>
                     Official Email & KPME Accreditation
                   </h4>
-                  <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                    {CLINIC_INFO.email}
-                  </p>
+                  <div style={{ marginBottom: '6px' }}>
+                    <a
+                      href={CLINIC_INFO.gmailComposeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Open in Gmail to compose mail to Sampoorna Diagnostic"
+                      style={{
+                        fontSize: '0.96rem',
+                        color: '#034ea2',
+                        fontWeight: 700,
+                        textDecoration: 'underline',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        transition: 'color 0.2s',
+                      }}
+                    >
+                      <span>{CLINIC_INFO.email}</span>
+                      <ExternalLink size={14} />
+                    </a>
+                  </div>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
                     KPME License: <strong style={{ color: 'var(--heading-color)' }}>{CLINIC_INFO.kpmeReg}</strong> • Chief Consultant:{' '}
                     <strong style={{ color: '#034ea2' }}>{CLINIC_INFO.headDoctor}</strong>
@@ -296,7 +325,7 @@ export default function ContactSection({ onOpenBooking, theme }) {
 
             <div className="contact-actions-row" style={{ display: 'flex', gap: '12px' }}>
               <a
-                href="https://maps.google.com/?q=Doomlight+Circle+Madhugiri+Karnataka"
+                href={CLINIC_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

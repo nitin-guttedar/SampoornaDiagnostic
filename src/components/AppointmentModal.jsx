@@ -10,7 +10,6 @@ import {
   Phone,
   CheckCircle2,
   Send,
-  Home,
   FileCheck,
   Building,
 } from 'lucide-react';
@@ -88,6 +87,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
           justifyContent: 'center',
           padding: '1rem',
         }}
+        className="appointment-modal-backdrop"
       >
         <motion.div
           initial={{ scale: 0.92, y: 20 }}
@@ -219,61 +219,8 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
                   <option value="Executive Health Check-up Package">Executive Health Check-up Package (Tumkur Special)</option>
                   <option value="Thyroid & Hormone Profile">Thyroid Profile (T3, T4, TSH) & Hormones</option>
                   <option value="Treadmill Test (TMT) / 2D Echo">Treadmill Test (TMT) / 2D Echo Heart Check</option>
-                  <option value="Home Blood Sample Collection">Home Blood Sample Collection (Madhugiri town)</option>
                   <option value="Superspeciality Doctor Consultation">Superspeciality Doctor Consultation</option>
                 </select>
-              </div>
-
-              {/* Location Mode */}
-              <div>
-                <label style={{ display: 'block', fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                  Appointment Mode
-                </label>
-                <div className="modal-mode-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, type: 'Center Visit' })}
-                    style={{
-                      padding: '10px',
-                      borderRadius: '8px',
-                      background: formData.type === 'Center Visit' ? '#034ea2' : 'var(--bg-tertiary)',
-                      border: formData.type === 'Center Visit' ? '1px solid #60a5fa' : '1px solid var(--border-light)',
-                      color: formData.type === 'Center Visit' ? '#ffffff' : 'var(--text-primary)',
-                      fontSize: '0.84rem',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                    }}
-                  >
-                    <Building size={14} />
-                    <span>Visit Madhugiri Center</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, type: 'Home Collection' })}
-                    style={{
-                      padding: '10px',
-                      borderRadius: '8px',
-                      background: formData.type === 'Home Collection' ? '#00a859' : 'var(--bg-tertiary)',
-                      border: formData.type === 'Home Collection' ? '1px solid #34d399' : '1px solid var(--border-light)',
-                      color: formData.type === 'Home Collection' ? '#ffffff' : 'var(--text-primary)',
-                      fontSize: '0.84rem',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                    }}
-                  >
-                    <Home size={14} />
-                    <span>Home Sample Pickup</span>
-                  </button>
-                </div>
               </div>
 
               {/* Date & Time */}
@@ -420,16 +367,18 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '',
       <style>{`
         @media (max-width: 640px) {
           .appointment-modal-box {
-            padding: 1.4rem 1rem !important;
+            padding: 1.3rem 0.9rem !important;
             max-height: 94vh !important;
+            border-radius: 16px !important;
           }
         }
         @media (max-width: 480px) {
-          .modal-mode-grid {
-            grid-template-columns: 1fr !important;
+          .appointment-modal-backdrop {
+            padding: 0.5rem !important;
           }
           .modal-datetime-grid {
             grid-template-columns: 1fr !important;
+            gap: 8px !important;
           }
         }
       `}</style>

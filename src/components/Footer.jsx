@@ -155,7 +155,7 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
                     fontWeight: 600,
                   }}
                 >
-                  Book Scan / Home Collection
+                  Book Diagnostic Scan / Lab Test
                 </button>
               </li>
             </ul>
@@ -169,7 +169,17 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.88rem' }}>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <MapPin size={18} color="#34d399" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ color: '#cbd5e1' }}>K.H. Road, Near Doomlight Circle, Madhugiri, Tumkur Dist., Karnataka</span>
+                <a
+                  href={CLINIC_INFO.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open Center Location on Google Maps"
+                  style={{ color: '#cbd5e1', textDecoration: 'none', transition: 'color 0.2s', lineHeight: 1.4 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#34d399')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#cbd5e1')}
+                >
+                  K.H. Road, Near Doomlight Circle, Madhugiri, Tumkur Dist., Karnataka
+                </a>
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <Phone size={18} color="#fbbf24" style={{ flexShrink: 0 }} />
@@ -179,7 +189,17 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <Mail size={18} color="#60a5fa" style={{ flexShrink: 0 }} />
-                <span style={{ color: '#cbd5e1' }}>{CLINIC_INFO.email}</span>
+                <a
+                  href={CLINIC_INFO.gmailComposeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Compose email to Sampoorna Diagnostic on Gmail"
+                  style={{ color: '#cbd5e1', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#60a5fa')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#cbd5e1')}
+                >
+                  {CLINIC_INFO.email}
+                </a>
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <Clock size={18} color="#38bdf8" style={{ flexShrink: 0 }} />

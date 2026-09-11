@@ -15,6 +15,7 @@ import {
   BookOpen,
   Activity,
   Layers,
+  Sparkles,
 } from 'lucide-react';
 
 export default function Navbar({
@@ -59,6 +60,13 @@ export default function Navbar({
       href: '#services',
       icon: Layers,
       color: '#034ea2',
+    },
+    {
+      title: 'New Machines Under Installation',
+      desc: 'Toshiba CT, Samsung V7 Ultrasound, Digital X-Ray DR, BPL TMT & ECG',
+      href: '#new-equipment',
+      icon: Sparkles,
+      color: '#d97706',
     },
     {
       title: '3D Equipment Experience',
@@ -127,18 +135,24 @@ export default function Navbar({
               <span className="topbar-hours-full">{CLINIC_INFO.workingHours.weekdays}</span>
               <span className="topbar-hours-short">7:00 AM - 8:30 PM</span>
             </span>
-            <span
+            <a
+              href={CLINIC_INFO.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 alignItems: 'center',
                 gap: '6px',
                 opacity: 0.95,
                 whiteSpace: 'nowrap',
+                color: '#ffffff',
+                textDecoration: 'none',
               }}
               className="topbar-landmark"
+              title="Open Madhugiri Center Location on Google Maps"
             >
               <MapPin size={13} color="#34d399" />
               <span>Near Doomlight Circle, Madhugiri</span>
-            </span>
+            </a>
             <span
               className="topbar-kpme"
               style={{
@@ -450,6 +464,44 @@ export default function Navbar({
 
             {/* Standalone Nav Links */}
             <a
+              href="#new-equipment"
+              style={{
+                color: 'var(--text-primary)',
+                opacity: 0.85,
+                textDecoration: 'none',
+                fontSize: '0.94rem',
+                fontWeight: 600,
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#034ea2';
+                e.currentTarget.style.opacity = '1';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = 'var(--text-primary)';
+                e.currentTarget.style.opacity = '0.85';
+              }}
+            >
+              <span>New Equipment</span>
+              <span
+                style={{
+                  fontSize: '0.66rem',
+                  background: '#f59e0b',
+                  color: '#ffffff',
+                  fontWeight: 800,
+                  padding: '1px 6px',
+                  borderRadius: '9999px',
+                }}
+              >
+                6 NEW
+              </span>
+            </a>
+
+            <a
               href="#about"
               style={{
                 color: 'var(--text-primary)',
@@ -632,6 +684,36 @@ export default function Navbar({
                 </a>
               ))}
             </div>
+
+            <a
+              href="#new-equipment"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                color: 'var(--text-primary)',
+                textDecoration: 'none',
+                fontSize: '1rem',
+                fontWeight: 600,
+                padding: '8px 0',
+                borderBottom: '1px solid var(--border-light)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <span>New Equipment Under Installation</span>
+              <span
+                style={{
+                  fontSize: '0.68rem',
+                  background: '#f59e0b',
+                  color: '#ffffff',
+                  fontWeight: 800,
+                  padding: '2px 8px',
+                  borderRadius: '9999px',
+                }}
+              >
+                6 Machines
+              </span>
+            </a>
 
             <a
               href="#about"

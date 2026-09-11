@@ -300,3 +300,188 @@ export const GALLERY_ITEMS = [
     desc: "The symbol of complete healthcare: combining clinical precision cross, caring hand, and radiant sunburst."
   }
 ];
+
+// Doctor Profile: Dr. Suhas Bhoovanalli
+export const DR_SUHAS_INFO = {
+  name: "Dr. Suhas Bhoovanalli",
+  title: "Consultant Radiologist & Diagnostic Specialist",
+  role: "Consultant Radiologist & Imaging Specialist",
+  qualifications: "MBBS, MD (Radiodiagnosis)",
+  experience: "Expert in Cross-Sectional Diagnostic Imaging",
+  image: ASSETS.drSuhasBhoovanalli,
+  bio: "Dedicated to bringing tertiary-care diagnostic precision to Madhugiri and Tumkur district. Dr. Suhas Bhoovanalli oversees computed tomography (16-slice CT), high-resolution ultrasound, color Doppler sonography, and digital radiography at Sampoorna Diagnostic Center, ensuring rapid, clinically validated, and compassionate diagnostic reporting for every patient.",
+  specialties: [
+    "16-Slice CT Scan & 3D Volumetric Imaging",
+    "High-Resolution Ultrasound & Color Doppler",
+    "Fetal Well-being & Prenatal Sonography",
+    "Emergency Trauma & Stroke Imaging",
+    "Digital Radiography (DR) Interpretations",
+  ],
+  quote: "Accurate and timely diagnosis is the true foundation of effective medical treatment. We are committed to providing the community of Madhugiri with hospital-grade diagnostic clarity right at their doorstep.",
+  badges: [
+    "Board Certified Radiologist",
+    "16-Slice CT Specialist",
+    "Color Doppler Expert",
+    "Evidence-Based Reporting",
+  ]
+};
+
+// State-of-the-Art Diagnostic Machines Under Installation
+export const INSTALLING_EQUIPMENT = [
+  {
+    id: "toshiba-ct",
+    name: "Toshiba Alexion 16 Slice CT Scanner",
+    brand: "Toshiba / Canon Medical Systems",
+    modality: "16-Slice Multislice Computed Tomography",
+    category: "Radiology & Imaging",
+    categoryKey: "radiology",
+    image: ASSETS.equipToshibaCt,
+    status: "Under Installation & Calibration",
+    statusBadge: "Active Installation",
+    badgeColor: "#034ea2",
+    highlight: "1st 16-Slice CT in Madhugiri",
+    features: [
+      "16 sub-millimeter isotropic slices per 0.75-second rotation",
+      "Adaptive AIDR 3D dose reduction software lowers radiation by up to 40%",
+      "Volumetric 3D, multiplanar reconstructions (MPR) and CT angiograms",
+      "Ultra-fast whole-body acquisition minimizing breath-holding discomfort",
+    ],
+    specs: [
+      { label: "Slice Capacity", value: "16 Sub-mm Slices / Rotation" },
+      { label: "Dose Modulation", value: "AIDR 3D Low Dose Technology" },
+      { label: "Gantry Aperture", value: "Wide Bore Ergonomic Design" },
+      { label: "Reconstruction", value: "3D Volumetric & MPR Matrix" },
+    ],
+    clinicalApplications: "Head trauma, acute stroke, HRCT chest (infection & lungs), triple-phase abdomen, bone fracture 3D mapping."
+  },
+  {
+    id: "samsung-v7",
+    name: "Samsung V7 Ultrasound Machine",
+    brand: "Samsung Healthcare",
+    modality: "Advanced Diagnostic Sonography & Color Doppler",
+    category: "Radiology & Imaging",
+    categoryKey: "radiology",
+    image: ASSETS.equipSamsungV7,
+    status: "Under Installation & Calibration",
+    statusBadge: "Active Installation",
+    badgeColor: "#00a859",
+    highlight: "Crystal Architecture™ Platform",
+    features: [
+      "Crystal Architecture™ with S-Vue™ high-sensitivity transducers",
+      "Advanced Color & Spectral Doppler for precise hemodynamic evaluation",
+      "ShadowHDR™ and ClearVision™ noise-filtering for supreme tissue detail",
+      "Dedicated obstetric, pelvic, vascular, and musculoskeletal imaging modes",
+    ],
+    specs: [
+      { label: "Display Monitor", value: "21.5\" Full HD LED + Touch Console" },
+      { label: "Transducers", value: "Multi-frequency Convex, Linear & TVS" },
+      { label: "Doppler Module", value: "Directional Power & Spectral Doppler" },
+      { label: "Safety", value: "100% Radiation-Free Acoustic Imaging" },
+    ],
+    clinicalApplications: "Fetal growth & anomaly scans, abdominal organ evaluation, DVT & peripheral vascular Doppler, thyroid & breast sonography."
+  },
+  {
+    id: "digital-xray-dr",
+    name: "Digital X-Ray Machine with DR Panel",
+    brand: "Advanced Digital Radiography System",
+    modality: "Direct Flat-Panel Digital Radiography",
+    category: "Radiology & Imaging",
+    categoryKey: "radiology",
+    image: ASSETS.equipDigitalXrayDr,
+    status: "Under Installation & Calibration",
+    statusBadge: "Active Installation",
+    badgeColor: "#0284c7",
+    highlight: "Direct Flat-Panel Digital Detector (DR)",
+    features: [
+      "High-efficiency wireless Cesium Iodide (CsI) digital flat panel detector",
+      "Instantaneous image acquisition on technologist console within 3 seconds",
+      "Significantly reduced ionizing radiation compared to conventional analog X-rays",
+      "Integrated DICOM PACS workflow for instant WhatsApp & cloud retrieval",
+    ],
+    specs: [
+      { label: "Detector", value: "Direct Cesium Iodide (CsI) Wireless DR" },
+      { label: "Radiation Dose", value: "Up to 70% Dose Reduction" },
+      { label: "Acquisition Time", value: "< 3 Seconds to Workstation" },
+      { label: "Output Resolution", value: "High Dynamic Range DICOM" },
+    ],
+    clinicalApplications: "Chest PA/lateral views, bone fractures & orthopedic joints, spine series, skull radiography, pre-operative clearances."
+  },
+  {
+    id: "bpl-tmt",
+    name: "BPL Treadmill Machine (TMT)",
+    brand: "BPL Medical Technologies",
+    modality: "Computerized Cardiac Stress Testing System",
+    category: "Cardiology Diagnostics",
+    categoryKey: "cardiology",
+    image: ASSETS.equipBplTreadmill,
+    status: "Under Installation & Calibration",
+    statusBadge: "Active Installation",
+    badgeColor: "#d97706",
+    highlight: "Computerized Cardiac Stress Test",
+    features: [
+      "Heavy-duty motorized clinical treadmill with emergency safety magnetic cutoff",
+      "Continuous 12-lead ECG telemetry tracking throughout exercise stages",
+      "Automatic real-time ST-segment elevation/depression and arrhythmia alarms",
+      "Standard Bruce, Modified Bruce, and customized exercise stress protocols",
+    ],
+    specs: [
+      { label: "Telemetry", value: "Continuous 12-Lead Real-time ECG" },
+      { label: "Safety", value: "Emergency Stop & Sturdy Handrails" },
+      { label: "Protocols", value: "Bruce, Modified Bruce, Naughton" },
+      { label: "Reporting", value: "Automated METs & ST Profile Trends" },
+    ],
+    clinicalApplications: "Coronary artery disease screening, exercise-induced angina, post-MI / angioplasty functional capacity, fitness clearance."
+  },
+  {
+    id: "bpl-ecg",
+    name: "BPL ECG Machine",
+    brand: "BPL Medical Technologies (Cardiart Series)",
+    modality: "12-Lead Diagnostic Electrocardiograph",
+    category: "Cardiology Diagnostics",
+    categoryKey: "cardiology",
+    image: ASSETS.equipBplEcg,
+    status: "Under Installation & Calibration",
+    statusBadge: "Active Installation",
+    badgeColor: "#dc2626",
+    highlight: "12-Channel High-Precision ECG",
+    features: [
+      "Simultaneous 12-lead acquisition with built-in advanced diagnostic algorithms",
+      "High-resolution color display showing live multi-channel cardiac waveforms",
+      "Built-in wide-format thermal array printer for immediate clinical tracing",
+      "Zero-latency detection for emergency arrhythmias and conduction disorders",
+    ],
+    specs: [
+      { label: "Lead Acquisition", value: "Simultaneous 12 Leads" },
+      { label: "Display", value: "Color LCD Real-Time Telemetry" },
+      { label: "Printer", value: "High-Resolution Thermal Array" },
+      { label: "Analysis", value: "Automatic Interpretation Algorithm" },
+    ],
+    clinicalApplications: "Acute chest pain triage, heart attack (STEMI/NSTEMI), arrhythmias, pre-operative fitness, routine executive health screens."
+  },
+  {
+    id: "lab-suite",
+    name: "Lab Machines: Hematology, Biochemistry & Histology",
+    brand: "Mindray / Sysmex / Leica Pathology Systems",
+    modality: "Automated Clinical Pathology & Analytical Suite",
+    category: "Pathology & Clinical Lab",
+    categoryKey: "pathology",
+    image: ASSETS.equipLabAnalyzers,
+    status: "Under Installation & Calibration",
+    statusBadge: "Active Installation",
+    badgeColor: "#8b5cf6",
+    highlight: "Fully Automated High-Throughput Suite",
+    features: [
+      "5-part differential automated hematology analyzer with laser scatter optics",
+      "Fully automated clinical biochemistry analyzer with refrigerated reagent carousel",
+      "Histology & tissue processing workstation for surgical biopsy examination",
+      "End-to-end barcoded tube tracking preventing manual identification errors",
+    ],
+    specs: [
+      { label: "Hematology", value: "5-Part Differential Laser Counter" },
+      { label: "Biochemistry", value: "Fully Automated Kinetic & Endpoint" },
+      { label: "Histopathology", value: "Precision Microtomy & Staining" },
+      { label: "Integration", value: "LIS Barcode Interfaced & Cloud Validated" },
+    ],
+    clinicalApplications: "Complete blood count (CBC), liver & kidney function tests, HbA1c, lipid profile, electrolytes, histology biopsy tissue analysis."
+  }
+];
