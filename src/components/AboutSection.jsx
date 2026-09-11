@@ -314,14 +314,6 @@ export default function AboutSection({ theme }) {
                   }}
                 >
                   <UserCheck size={18} color="#00a859" />
-                  <div>
-                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#ffffff' }}>
-                      Official Medical Staff
-                    </div>
-                    <div style={{ fontSize: '0.68rem', color: '#94a3b8' }}>
-                      Branded Apron & Verified Clinical Credentials
-                    </div>
-                  </div>
                 </div>
               </div>
 
