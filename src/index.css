@@ -437,7 +437,7 @@ section[id] {
   .container {
     padding: 0 0.75rem;
   }
-  .btn-primary, .btn-green, .btn-secondary {
+  .btn-primary:not(.nav-cta-btn), .btn-green, .btn-secondary {
     white-space: normal !important;
     text-align: center;
     line-height: 1.35;

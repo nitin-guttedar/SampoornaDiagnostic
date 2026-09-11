@@ -202,9 +202,10 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
                   <button
                     key={tab.key}
                     onClick={() => setHeroModel(tab.key)}
+                    className="hero-tab-btn"
                     style={{
                       flex: '1',
-                      minWidth: '82px',
+                      minWidth: 0,
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
@@ -408,6 +409,16 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
         }
 
         @media (max-width: 640px) {
+          .hero-tabs-scroll {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
+            overflow-x: visible !important;
+            padding-bottom: 0 !important;
+          }
+          .hero-tab-btn {
+            padding: 8px 6px !important;
+          }
           .hero-guarantees {
             grid-template-columns: 1fr !important;
             gap: 8px !important;

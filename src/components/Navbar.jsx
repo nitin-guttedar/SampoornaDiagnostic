@@ -240,7 +240,8 @@ export default function Navbar({
               alignItems: 'center',
               gap: '10px',
               textDecoration: 'none',
-              flexShrink: 0,
+              flexShrink: 1,
+              minWidth: 0,
             }}
           >
             <img
@@ -258,7 +259,7 @@ export default function Navbar({
                 flexShrink: 0,
               }}
             />
-            <div style={{ whiteSpace: 'nowrap' }}>
+            <div className="nav-brand-text" style={{ whiteSpace: 'nowrap', minWidth: 0 }}>
               <div
                 className="nav-brand-title"
                 style={{
@@ -272,8 +273,9 @@ export default function Navbar({
                   gap: '6px',
                 }}
               >
-                SAMPOORNA
+                <span>SAMPOORNA</span>
                 <span
+                  className="nav-brand-badge"
                   style={{
                     fontSize: '0.72rem',
                     color: '#00a859',
@@ -573,10 +575,11 @@ export default function Navbar({
 
           {/* Right Action CTAs */}
           <div
+            className="nav-actions-wrapper"
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: '10px',
               flexShrink: 0,
             }}
           >
@@ -609,51 +612,96 @@ export default function Navbar({
               onClick={onOpenBooking}
               className="btn-primary nav-cta-btn"
               style={{
-                padding: '0.62rem 1.4rem',
+                padding: '0.62rem 1.3rem',
                 fontSize: '0.88rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                flexShrink: 0,
               }}
+              title="Book Test or Scan Appointment"
             >
               <Calendar size={15} style={{ flexShrink: 0 }} />
               <span className="nav-cta-text-full">Book Test / Scan</span>
               <span className="nav-cta-text-short">Book Scan</span>
+              <span className="nav-cta-text-mini">Book</span>
             </button>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Hamburger Button - High visibility & touch optimized */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="mobile-hamburger"
+              aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+              aria-expanded={mobileMenuOpen}
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid var(--border-light)',
-                color: 'var(--text-primary)',
-                padding: '8px',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                display: 'flex',
+                display: 'none',
                 alignItems: 'center',
                 justifyContent: 'center',
+                width: '42px',
+                height: '42px',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                border: mobileMenuOpen
+                  ? '1.5px solid #00a859'
+                  : '1.5px solid rgba(255, 255, 255, 0.3)',
+                background: mobileMenuOpen
+                  ? '#00a859'
+                  : 'linear-gradient(135deg, #034ea2 0%, #0b58ca 100%)',
+                color: '#ffffff',
+                boxShadow: '0 4px 14px rgba(3, 78, 162, 0.35)',
                 flexShrink: 0,
+                padding: 0,
+                transition: 'all 0.2s ease',
               }}
-              className="mobile-hamburger"
-              aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileMenuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2.5} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu Drawer */}
         {mobileMenuOpen && (
           <div
+            className="mobile-menu-drawer"
             style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
               background: 'var(--bg-modal)',
               borderTop: '1px solid var(--border-light)',
-              padding: '1.5rem',
+              padding: '1.25rem',
               display: 'flex',
               flexDirection: 'column',
-              gap: '0.8rem',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+              gap: '0.75rem',
+              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.45)',
+              maxHeight: 'calc(100vh - 105px)',
+              overflowY: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              zIndex: 1005,
             }}
           >
+            {/* Quick Action in Mobile Menu: Prominent Book Scan CTA */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenBooking();
+              }}
+              className="btn-primary"
+              style={{
+                width: '100%',
+                padding: '0.85rem',
+                fontSize: '0.95rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                marginBottom: '0.4rem',
+              }}
+            >
+              <Calendar size={18} />
+              <span>Book Scan / Test Online</span>
+            </button>
             {/* Services with Sub-items */}
             <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '10px' }}>
               <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>
@@ -819,38 +867,107 @@ export default function Navbar({
         .topbar-hours-full { display: inline; }
         .topbar-landmark { display: none; }
         .nav-cta-text-short { display: none; }
+        .nav-cta-text-mini { display: none; }
         .nav-cta-text-full { display: inline; }
 
+        /* Desktop Mode (>= 1040px) */
         @media (min-width: 1040px) {
           .desktop-menu { display: flex !important; }
           .desktop-btn { display: inline-flex !important; }
           .mobile-hamburger { display: none !important; }
         }
-        @media (min-width: 768px) {
-          .topbar-landmark { display: inline-flex !important; }
-        }
-        @media (max-width: 767px) {
-          .topbar-hours-full { display: none !important; }
-          .topbar-hours-short { display: inline !important; font-size: 0.74rem; }
-        }
-        @media (max-width: 580px) {
-          .topbar-kpme { display: none !important; }
-          .nav-cta-btn {
-            padding: 0.48rem 0.8rem !important;
-            font-size: 0.8rem !important;
+
+        /* Tablet & Mobile Mode (< 1040px) */
+        @media (max-width: 1039px) {
+          .desktop-menu { display: none !important; }
+          .desktop-btn { display: none !important; }
+          .mobile-hamburger {
+            display: flex !important;
           }
           .nav-cta-text-full { display: none !important; }
           .nav-cta-text-short { display: inline !important; }
+          .nav-cta-btn {
+            padding: 0.52rem 0.95rem !important;
+            font-size: 0.82rem !important;
+          }
         }
-        @media (max-width: 440px) {
+
+        @media (min-width: 768px) {
+          .topbar-landmark { display: inline-flex !important; }
+        }
+
+        @media (max-width: 767px) {
+          .topbar-hours-full { display: none !important; }
+          .topbar-hours-short { display: inline !important; font-size: 0.74rem; }
+          .nav-container {
+            padding: 0 12px !important;
+            height: 64px !important;
+          }
+        }
+
+        /* Mobile Standard (< 640px) */
+        @media (max-width: 640px) {
+          .topbar-kpme { display: none !important; }
+          .nav-brand-logo {
+            height: 35px !important;
+          }
+          .nav-brand-title {
+            font-size: 0.98rem !important;
+            gap: 4px !important;
+          }
+          .nav-brand-badge {
+            font-size: 0.65rem !important;
+            padding: 1px 5px !important;
+          }
+          .nav-brand-subtitle {
+            font-size: 0.68rem !important;
+            margin-top: 1px !important;
+          }
+          .nav-actions-wrapper {
+            gap: 8px !important;
+          }
+          .mobile-hamburger {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 9px !important;
+          }
+        }
+
+        /* Mobile Narrow (< 480px, e.g. iPhones 375px - 414px) */
+        @media (max-width: 480px) {
+          .nav-brand-subtitle { display: none !important; }
+          .nav-brand-title {
+            font-size: 0.92rem !important;
+          }
+          .nav-brand-badge {
+            font-size: 0.62rem !important;
+            padding: 1px 4px !important;
+          }
+          .nav-cta-text-short { display: none !important; }
+          .nav-cta-text-mini { display: inline !important; }
+          .nav-cta-btn {
+            padding: 0.44rem 0.65rem !important;
+            font-size: 0.76rem !important;
+            gap: 4px !important;
+            border-radius: 8px !important;
+          }
           .theme-toggle-label { display: none !important; }
-          .nav-brand-logo { height: 38px !important; }
-          .nav-brand-title { font-size: 1.05rem !important; }
-          .nav-brand-subtitle { font-size: 0.7rem !important; }
         }
-        @media (max-width: 370px) {
+
+        /* Extra Small Mobile (< 360px) */
+        @media (max-width: 360px) {
           .topbar-hours-short { display: none !important; }
-          .topbar-phone { font-size: 0.75rem !important; }
+          .topbar-phone { font-size: 0.74rem !important; }
+          .nav-cta-text-mini { display: none !important; }
+          .nav-cta-btn {
+            padding: 0.44rem 0.55rem !important;
+          }
+          .nav-brand-title span:first-child {
+            font-size: 0.84rem !important;
+          }
+          .nav-brand-badge {
+            display: none !important;
+          }
         }
       `}</style>
     </header>
