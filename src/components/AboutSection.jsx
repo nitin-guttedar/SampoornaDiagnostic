@@ -297,24 +297,6 @@ export default function AboutSection({ theme }) {
                 />
 
                 {/* Overlaid Verified Doctor Badge */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '12px',
-                    left: '12px',
-                    right: '12px',
-                    background: 'rgba(15, 23, 42, 0.85)',
-                    backdropFilter: 'blur(8px)',
-                    padding: '8px 12px',
-                    borderRadius: '10px',
-                    border: '1px solid rgba(0, 168, 89, 0.4)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                  }}
-                >
-                  <UserCheck size={18} color="#00a859" />
-                </div>
               </div>
 
               {/* Verified Pill */}
