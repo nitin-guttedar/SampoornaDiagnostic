@@ -32,7 +32,7 @@ export const CLINIC_INFO = {
   gmailComposeUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=sdclab.madhugiri@gmail.com",
   googleMapsUrl: "https://maps.app.goo.gl/3GZijJuPQ3pDXCfb8?g_st=ic",
   kpmeReg: "TMK01236ALCDS",
-  headDoctor: "Dr. Somashekhar M.B.",
+  headDoctor: "Dr. Suhas Bhoovanalli",
   leadConsultant: "Dr. Suhas Bhoovanalli",
   landmarkMilestone: "16-Slice Multislice CT Scan – 1st Time in Madhugiri",
   workingHours: {

@@ -435,7 +435,7 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div
+            {/* <div
               style={{
                 width: '46px',
                 height: '46px',
@@ -449,16 +449,8 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
               }}
             >
               <FileCheck2 size={24} />
-            </div>
-            <div>
-              <h4 style={{ fontSize: '1.05rem', color: 'var(--heading-color)', margin: 0, fontWeight: 700 }}>
-                Calibrated by Certified Biomedical Engineers
-              </h4>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', margin: '4px 0 0 0', lineHeight: 1.4 }}>
-                All installation stages adhere to strict radiation safety standards (AERB guidelines), KPME clinical norms,
-                and vendor calibration protocols to guarantee zero error margins.
-              </p>
-            </div>
+            </div> */}
+
           </div>
 
           <button

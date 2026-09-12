@@ -34,7 +34,7 @@ export const KEY_BENEFITS = [
     icon: "UserCheck",
     title: "Expert Consultation",
     kannadaTitle: "ತಜ್ಞ ವೈದ್ಯರ ಸಮಾಲೋಚನೆ",
-    desc: "Experienced radiologists, cardiology specialists and visiting superspeciality consultants headed by Dr. Somashekhar M.B.",
+    desc: "Experienced radiologists, cardiology specialists and visiting superspeciality consultants headed by Dr. Suhas Bhoovanalli.",
     highlight: "Renowned Specialists",
     color: "#f59e0b"
   },
@@ -194,7 +194,7 @@ export const ABOUT_CONTENT = {
   subheading: "Reliable, Evidence-Based Diagnostics Close to Home",
   lead: "Sampoorna Diagnostic Center was established to provide reliable, evidence-based diagnostic services close to home for the people of Madhugiri and Tumkur district. By combining advanced imaging technology with a high-standard laboratory and experienced consultants, we help clinicians arrive at accurate diagnoses and treatment plans.",
   registration: "KPME Reg: TMK01236ALCDS",
-  director: "Dr. Somashekhar M.B.",
+  director: "Dr. Suhas Bhoovanalli",
   mission: "To deliver accurate, timely and ethically reported diagnostic results that support better clinical outcomes.",
   vision: "To be the most trusted diagnostic center in the Madhugiri–Tumkur region, recognized for professional standards, patient comfort and collaboration with the medical community.",
   values: [
@@ -290,7 +290,7 @@ export const GALLERY_ITEMS = [
     title: "Karnataka Medical Establishment Registration (KPME)",
     category: "Accreditation",
     src: ASSETS.boardRegistration,
-    desc: "Official KPME Registration: TMK01236ALCDS under the medical leadership of Dr. Somashekhar M.B."
+    desc: "Official KPME Registration: TMK01236ALCDS under the medical leadership of Dr. Suhas Bhoovanalli."
   },
   {
     id: "brand-emblem",

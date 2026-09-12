@@ -73,7 +73,7 @@ export default function AboutSection({ theme }) {
             >
               <img
                 src={ASSETS.boardRegistration}
-                alt="KPME Registration TMK01236ALCDS - Dr. Somashekhar M.B."
+                alt="KPME Registration TMK01236ALCDS - Dr. Suhas Bhoovanalli"
                 style={{
                   width: '100%',
                   borderRadius: '10px',
@@ -296,7 +296,6 @@ export default function AboutSection({ theme }) {
                   }}
                 />
 
-                {/* Overlaid Verified Doctor Badge */}
               </div>
 
               {/* Verified Pill */}

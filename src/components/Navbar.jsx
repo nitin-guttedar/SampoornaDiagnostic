@@ -308,8 +308,8 @@ export default function Navbar({
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: '30px',
-              margin: '0 25px',
+              gap: '20px',
+              margin: '0 15px',
             }}
             className="desktop-menu"
           >
@@ -875,6 +875,18 @@ export default function Navbar({
           .desktop-menu { display: flex !important; }
           .desktop-btn { display: inline-flex !important; }
           .mobile-hamburger { display: none !important; }
+        }
+        @media (min-width: 1040px) and (max-width: 1280px) {
+          .desktop-menu {
+            gap: 14px !important;
+            margin: 0 10px !important;
+          }
+          .nav-brand-title {
+            font-size: 1.08rem !important;
+          }
+          .nav-cta-btn {
+            padding: 0.55rem 0.95rem !important;
+          }
         }
 
         /* Tablet & Mobile Mode (< 1040px) */

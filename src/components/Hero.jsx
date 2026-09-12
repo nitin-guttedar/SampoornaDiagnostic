@@ -15,6 +15,8 @@ import {
   Radio,
   FileSearch,
   ExternalLink,
+  MapPin,
+  UserCheck,
 } from 'lucide-react';
 
 export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
@@ -272,47 +274,57 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
             </div>
 
             {/* Floating Telemetry Stats Badge */}
-            <div
-              className="glass-panel hero-telemetry-badge"
-              style={{
-                padding: '12px 20px',
-                border: '1px solid var(--border-light)',
-                background: 'var(--bg-card)',
-              }}
-            >
+            <div className="glass-panel hero-telemetry-badge">
+              {/* Item 1: Location */}
               <a
                 href={CLINIC_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hero-telemetry-item"
+                className="hero-telemetry-item hero-telemetry-location"
                 title="Open Madhugiri Center on Google Maps"
-                style={{ textDecoration: 'none', display: 'block' }}
               >
-                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '3px' }}>
-                  <span>Facility Location</span>
-                  <ExternalLink size={10} color="#00a859" />
-                </span>
-                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--heading-color)', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#00a859')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--heading-color)')}>
-                  Doomlight Circle, Madhugiri
-                </p>
+                <div className="telemetry-icon-box location-icon-box">
+                  <MapPin size={15} color="#00a859" />
+                </div>
+                <div className="telemetry-text-group">
+                  <span className="telemetry-label">
+                    <span>Location</span>
+                    <ExternalLink size={9} color="#00a859" />
+                  </span>
+                  <p className="telemetry-value telemetry-value-location">
+                    Madhugiri
+                  </p>
+                </div>
               </a>
-              <div className="hero-telemetry-divider" style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
-              <div className="hero-telemetry-item">
-                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Consultant Head
-                </span>
-                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: '#034ea2' }}>
-                  Dr. Somashekhar M.B.
-                </p>
+
+              {/* Item 2: Consultant Head */}
+              <div className="hero-telemetry-item hero-telemetry-head">
+                <div className="telemetry-icon-box head-icon-box">
+                  <UserCheck size={15} color="#034ea2" />
+                </div>
+                <div className="telemetry-text-group">
+                  <span className="telemetry-label">
+                    Consultant Head
+                  </span>
+                  <p className="telemetry-value telemetry-value-head">
+                    Dr. Suhas Bhoovanalli
+                  </p>
+                </div>
               </div>
-              <div className="hero-telemetry-divider" style={{ height: '26px', width: '1px', background: 'var(--border-light)' }} />
-              <div className="hero-telemetry-item">
-                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Diagnostics
-                </span>
-                <p style={{ fontSize: '0.84rem', fontWeight: 700, color: '#00a859' }}>
-                  Imaging + Pathology
-                </p>
+
+              {/* Item 3: Diagnostics */}
+              <div className="hero-telemetry-item hero-telemetry-diag">
+                <div className="telemetry-icon-box diag-icon-box">
+                  <Activity size={15} color="#00a859" />
+                </div>
+                <div className="telemetry-text-group">
+                  <span className="telemetry-label">
+                    Diagnostics
+                  </span>
+                  <p className="telemetry-value telemetry-value-diag">
+                    Imaging + Pathology
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -385,11 +397,99 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
         .hero-telemetry-badge {
           position: absolute;
           bottom: -22px;
-          left: 20px;
-          right: 20px;
+          left: 10px;
+          right: 10px;
           display: flex;
           justifyContent: space-between;
           align-items: center;
+          gap: 12px;
+          padding: 9px 14px;
+          background: var(--bg-card);
+          border: 1px solid var(--border-light);
+          border-radius: 14px;
+          box-shadow: 0 10px 28px -8px rgba(3, 78, 162, 0.15);
+        }
+
+        .hero-telemetry-item {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          text-decoration: none;
+          min-width: 0;
+          flex-shrink: 0;
+        }
+
+        .hero-telemetry-head {
+          flex-shrink: 1;
+        }
+
+        .hero-telemetry-item:not(:last-child)::after {
+          content: '';
+          display: block;
+          height: 22px;
+          width: 1px;
+          background: var(--border-light);
+          margin-left: 10px;
+          flex-shrink: 0;
+        }
+
+        .telemetry-icon-box {
+          width: 28px;
+          height: 28px;
+          border-radius: 7px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .location-icon-box {
+          background: rgba(0, 168, 89, 0.12);
+        }
+        .head-icon-box {
+          background: rgba(3, 78, 162, 0.12);
+        }
+        .diag-icon-box {
+          background: rgba(0, 168, 89, 0.12);
+        }
+
+        .telemetry-text-group {
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+          min-width: 0;
+        }
+
+        .telemetry-label {
+          font-size: 0.65rem;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+
+        .telemetry-value {
+          font-size: 0.83rem;
+          font-weight: 700;
+          line-height: 1.2;
+          margin: 0;
+          white-space: nowrap;
+        }
+        .telemetry-value-location {
+          color: var(--heading-color);
+          transition: color 0.2s;
+        }
+        .hero-telemetry-location:hover .telemetry-value-location {
+          color: #00a859;
+        }
+        .telemetry-value-head {
+          color: #034ea2;
+        }
+        .telemetry-value-diag {
+          color: #00a859;
         }
 
         @media (max-width: 992px) {
@@ -405,6 +505,28 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
         @media (max-width: 768px) {
           .hero-canvas-wrapper {
             height: 360px !important;
+          }
+          .hero-telemetry-badge {
+            position: static !important;
+            margin-top: 14px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            padding: 10px !important;
+          }
+          .hero-telemetry-item {
+            width: 100% !important;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 8px 12px !important;
+          }
+          .hero-telemetry-item:not(:last-child)::after {
+            display: none !important;
+          }
+          .hero-telemetry-head {
+            background: rgba(3, 78, 162, 0.06) !important;
+            border: 1px solid rgba(3, 78, 162, 0.16) !important;
           }
         }
 
@@ -434,28 +556,9 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
           .hero-canvas-wrapper {
             height: 310px !important;
           }
-          .hero-telemetry-badge {
-            position: static !important;
-            margin-top: 12px !important;
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 8px !important;
-            padding: 10px 12px !important;
-            text-align: center !important;
-          }
-          .hero-telemetry-divider {
-            display: none !important;
-          }
           .benefits-grid {
             grid-template-columns: 1fr !important;
             gap: 12px !important;
-          }
-        }
-
-        @media (max-width: 440px) {
-          .hero-telemetry-badge {
-            grid-template-columns: 1fr !important;
-            text-align: left !important;
           }
         }
       `}</style>
