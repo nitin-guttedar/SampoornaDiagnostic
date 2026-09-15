@@ -6,11 +6,10 @@ import Microscope3D from './Microscope3D';
 import DigitalXRay3D from './DigitalXRay3D';
 import UltrasoundDoppler3D from './UltrasoundDoppler3D';
 import DnaHelix3D from './DnaHelix3D';
+import ToshibaAlexionCTViewer from './ToshibaAlexionCTViewer';
 
 function ModelSwitcher({ modelKey }) {
   switch (modelKey) {
-    case 'ctScan':
-      return <CTScanner3D />;
     case 'microscope':
       return <Microscope3D />;
     case 'xray':
@@ -20,7 +19,7 @@ function ModelSwitcher({ modelKey }) {
     case 'dna':
       return <DnaHelix3D />;
     default:
-      return <CTScanner3D />;
+      return <Microscope3D />;
   }
 }
 
@@ -35,6 +34,11 @@ function Loader() {
 
 export default function DiagnosticScene({ activeModel = 'ctScan', autoRotate = true, interactive = true, theme = 'light' }) {
   const isLight = theme === 'light';
+
+  // For Toshiba Alexion 16-Slice CT Scanner, display the photorealistic image with smooth 3D rotation animation
+  if (activeModel === 'ctScan') {
+    return <ToshibaAlexionCTViewer autoRotate={autoRotate} theme={theme} />;
+  }
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>

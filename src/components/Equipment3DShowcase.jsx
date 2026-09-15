@@ -16,15 +16,15 @@ import {
 
 const EQUIPMENT_DATA = {
   ctScan: {
-    name: '16-Slice Multislice CT Scanner',
-    modality: 'Advanced Computed Tomography',
-    badge: '1st Time in Madhugiri',
+    name: 'Toshiba Alexion 16-Slice CT Scanner',
+    modality: 'Advanced 16-Slice Multislice Computed Tomography',
+    badge: '1st Time in Madhugiri • Canon / Toshiba',
     highlightColor: '#034ea2',
     specs: [
-      { label: 'Slice Capability', value: '16 Sub-Millimeter Slices per Rotation' },
-      { label: 'Radiation Safety', value: 'Smart Dose Modulated Protocol (Low Exposure)' },
+      { label: 'Slice Capability', value: '16 Isotropic Slices per 0.75-Sec Rotation' },
+      { label: 'Dose Modulation', value: 'AIDR 3D Adaptive Dose Reduction (-40%)' },
+      { label: 'Gantry Aperture', value: '720mm Wide Ergonomic Patient Bore' },
       { label: 'Clinical Reconstructions', value: 'Volumetric 3D, Sagittal & Coronal MPR' },
-      { label: 'Emergency Protocol', value: 'Instant Head Trauma & Stroke Ready' },
     ],
     indications: [
       'Trauma & Head Injury Evaluation',
@@ -33,7 +33,7 @@ const EQUIPMENT_DATA = {
       'Triple-Phase Abdomen & Pelvis CT',
     ],
     description:
-      'Sampoorna Diagnostic brings Madhugiri its premier 16-slice CT scanner. Enabling high-speed volumetric patient scanning in seconds, it eliminates motion artifacts and provides clinicians with razor-sharp diagnostic precision for critical medical decisions.',
+      'Sampoorna Diagnostic brings Madhugiri its premier Toshiba Alexion 16-slice CT scanner. Engineered with AIDR 3D low-dose adaptive reconstruction and ultra-fast whole-body helical acquisition, it provides razor-sharp volumetric imaging with maximum patient comfort and safety.',
   },
   microscope: {
     name: 'Automated Clinical Laboratory Platform',
@@ -148,7 +148,7 @@ export default function Equipment3DShowcase({ onOpenBooking, theme }) {
           }}
         >
           {[
-            { key: 'ctScan', label: '16-Slice CT Scan', icon: Cpu },
+            { key: 'ctScan', label: 'Toshiba Alexion 16-Slice CT', icon: Cpu },
             { key: 'microscope', label: 'Laboratory Microscope', icon: Microscope },
             { key: 'xray', label: 'Digital X-Ray System', icon: Radio },
             { key: 'ultrasound', label: 'Ultrasound & Doppler', icon: Activity },
