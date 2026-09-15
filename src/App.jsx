@@ -11,7 +11,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import AppointmentModal from './components/AppointmentModal';
 import TestDirectoryModal from './components/TestDirectoryModal';
-import { Phone, MessageSquare } from 'lucide-react';
+import { Phone, MessageSquare, MapPin } from 'lucide-react';
 import { CLINIC_INFO } from './data/assets';
 
 export default function App() {
@@ -168,8 +168,36 @@ export default function App() {
           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           title={`Call Helpline (${CLINIC_INFO.phoneFormatted})`}
+          aria-label={`Call Helpline (${CLINIC_INFO.phoneFormatted})`}
         >
           <Phone size={22} />
+        </a>
+
+        {/* Quick Location / Google Maps Floating Button */}
+        <a
+          href={CLINIC_INFO.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="floating-action-btn"
+          style={{
+            width: '48px',
+            height: '48px',
+            borderRadius: '50%',
+            background: '#ea4335',
+            boxShadow: '0 8px 25px rgba(234, 67, 53, 0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#ffffff',
+            textDecoration: 'none',
+            transition: 'transform 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          title="Get Directions & Location on Google Maps"
+          aria-label="View Clinic Location on Google Maps"
+        >
+          <MapPin size={22} />
         </a>
       </div>
 
