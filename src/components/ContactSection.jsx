@@ -155,7 +155,7 @@ export default function ContactSection({ onOpenBooking, theme }) {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1.08rem', color: 'var(--heading-color)', marginBottom: '4px' }}>
-                    Official Email & KPME Accreditation
+                    Official Email & Diagnostic Inquiries
                   </h4>
                   <div style={{ marginBottom: '6px' }}>
                     <a
@@ -179,8 +179,8 @@ export default function ContactSection({ onOpenBooking, theme }) {
                     </a>
                   </div>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                    KPME License: <strong style={{ color: 'var(--heading-color)' }}>{CLINIC_INFO.kpmeReg}</strong> • Chief Consultant:{' '}
-                    <strong style={{ color: '#034ea2' }}>{CLINIC_INFO.headDoctor}</strong>
+                    Chief Medical Consultant:{' '}
+                    <strong style={{ color: '#034ea2' }}>{CLINIC_INFO.headDoctor}</strong> • Consultant Radiologist
                   </p>
                 </div>
               </div>

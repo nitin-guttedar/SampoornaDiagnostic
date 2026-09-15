@@ -220,7 +220,7 @@ export default function BlogSection({ theme }) {
                   lineHeight: 1.5,
                 }}
               >
-                {/* <strong>Clinical Note:</strong> Diagnostic procedures should always be recommended and evaluated by a */}
+                <strong>Clinical Note:</strong> Diagnostic procedures should always be recommended and evaluated by a
                 registered medical practitioner based on clinical correlation.
               </div>
             </motion.div>

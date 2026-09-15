@@ -18,7 +18,7 @@ export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('16-Slice Multislice CT Scan');
   const [directoryOpen, setDirectoryOpen] = useState(false);
-  
+
   // Theme state: defaults to 'light' per user request, persists in localStorage
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('sampoorna_theme') || 'light';
@@ -64,7 +64,7 @@ export default function App() {
           theme={theme}
         />
 
-        {/* State-of-the-Art Machines Under Installation */}
+        {/* Advanced Diagnostic Equipment (Installed & CT Under Installation) */}
         <InstallationEquipmentSection
           onOpenBooking={(serviceName) => handleOpenBooking(serviceName)}
           theme={theme}

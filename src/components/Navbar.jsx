@@ -62,11 +62,11 @@ export default function Navbar({
       color: '#034ea2',
     },
     {
-      title: 'New Machines Under Installation',
-      desc: 'Toshiba CT, Samsung V7 Ultrasound, Digital X-Ray DR, BPL TMT & ECG',
+      title: 'Advanced Diagnostic Equipment',
+      desc: 'All machines installed (CT scan under active installation)',
       href: '#new-equipment',
       icon: Sparkles,
-      color: '#d97706',
+      color: '#034ea2',
     },
     {
       title: '3D Equipment Experience',
@@ -153,20 +153,6 @@ export default function Navbar({
               <MapPin size={13} color="#34d399" />
               <span>Near Doomlight Circle, Madhugiri</span>
             </a>
-            <span
-              className="topbar-kpme"
-              style={{
-                background: 'rgba(255,255,255,0.18)',
-                padding: '2px 7px',
-                borderRadius: '4px',
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                letterSpacing: '0.04em',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              KPME: {CLINIC_INFO.kpmeReg}
-            </span>
           </div>
 
           {/* Right Controls: Theme Toggle + Phone Helpline */}
@@ -488,18 +474,18 @@ export default function Navbar({
                 e.currentTarget.style.opacity = '0.85';
               }}
             >
-              <span>New Equipment</span>
+              <span>Diagnostic Equipment</span>
               <span
                 style={{
                   fontSize: '0.66rem',
-                  background: '#f59e0b',
+                  background: '#034ea2',
                   color: '#ffffff',
                   fontWeight: 800,
                   padding: '1px 6px',
                   borderRadius: '9999px',
                 }}
               >
-                6 NEW
+                CT INSTALL
               </span>
             </a>
 
@@ -748,11 +734,11 @@ export default function Navbar({
                 justifyContent: 'space-between',
               }}
             >
-              <span>New Equipment Under Installation</span>
+              <span>Diagnostic Equipment (CT Under Installation)</span>
               <span
                 style={{
                   fontSize: '0.68rem',
-                  background: '#f59e0b',
+                  background: '#034ea2',
                   color: '#ffffff',
                   fontWeight: 800,
                   padding: '2px 8px',
@@ -919,7 +905,6 @@ export default function Navbar({
 
         /* Mobile Standard (< 640px) */
         @media (max-width: 640px) {
-          .topbar-kpme { display: none !important; }
           .nav-brand-logo {
             height: 35px !important;
           }

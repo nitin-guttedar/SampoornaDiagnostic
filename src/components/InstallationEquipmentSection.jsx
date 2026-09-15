@@ -74,10 +74,14 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Section Header */}
         <div className="section-header">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '0.6rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '0.6rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span className="glass-badge glass-badge-green">
+              <CheckCircle2 size={13} color="#00a859" />
+              <span>5 Modalities Fully Installed</span>
+            </span>
             <span className="glass-badge glass-badge-amber">
               <span className="pulse-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#d97706', display: 'inline-block' }} />
-              <span>Technology Commissioning</span>
+              <span>CT Scan Under Installation</span>
             </span>
             <span className="glass-badge glass-badge-blue">
               <Sparkles size={13} color="#034ea2" />
@@ -86,13 +90,13 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
           </div>
 
           <h2 style={{ fontSize: 'clamp(1.85rem, 4vw, 2.7rem)', color: 'var(--heading-color)' }}>
-            New Equipment & Machines <span className="gradient-text-blue">Under Installation</span>
+            Advanced Diagnostic Equipment & <span className="gradient-text-blue">CT Installation</span>
           </h2>
 
           <p style={{ maxWidth: '780px', margin: '0 auto', fontSize: '0.98rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
-            To deliver unmatched diagnostic precision and eliminate travel to metropolitan hospitals, Sampoorna Diagnostic Center
-            is actively installing and calibrating state-of-the-art multi-slice CT, high-definition sonography, computerized TMT stress
-            systems, 12-lead ECG, and automated lab platforms right here in Madhugiri.
+            Sampoorna Diagnostic Center has fully installed and operationalized high-definition Samsung V7 Ultrasound & Doppler,
+            Digital X-Ray with wireless DR panel, computerized BPL Treadmill Test (TMT), 12-lead ECG, and automated lab pathology suites.
+            Our flagship 16-slice CT scanner is currently under active installation and calibration to bring world-class cross-sectional imaging to Madhugiri.
           </p>
         </div>
 
@@ -247,7 +251,9 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
                         backdropFilter: 'blur(8px)',
                         padding: '4px 10px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(251, 191, 36, 0.55)',
+                        border: equip.id === 'toshiba-ct'
+                          ? '1px solid rgba(251, 191, 36, 0.55)'
+                          : '1px solid rgba(0, 168, 89, 0.55)',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
                         whiteSpace: 'nowrap',
                       }}
@@ -257,14 +263,20 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
                           width: '7px',
                           height: '7px',
                           borderRadius: '50%',
-                          background: '#f59e0b',
-                          boxShadow: '0 0 8px #f59e0b',
+                          background: equip.id === 'toshiba-ct' ? '#f59e0b' : '#00a859',
+                          boxShadow: equip.id === 'toshiba-ct' ? '0 0 8px #f59e0b' : '0 0 8px #00a859',
                           display: 'inline-block',
-                          animation: 'pulse 1.8s infinite',
+                          animation: equip.id === 'toshiba-ct' ? 'pulse 1.8s infinite' : 'none',
                         }}
                       />
-                      <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#fef3c7' }}>
-                        Installation in Process
+                      <span
+                        style={{
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          color: equip.id === 'toshiba-ct' ? '#fef3c7' : '#dcfce7',
+                        }}
+                      >
+                        {equip.id === 'toshiba-ct' ? 'Under Installation' : 'Installed & Operational'}
                       </span>
                     </div>
                   </div>
@@ -410,7 +422,11 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
                       e.currentTarget.style.color = 'var(--text-primary)';
                     }}
                   >
-                    <span>Inquire / Pre-Book for {equip.name.split(' ')[0]}</span>
+                    <span>
+                      {equip.id === 'toshiba-ct'
+                        ? 'Inquire / Pre-Book for 16-Slice CT'
+                        : `Book / Inquire for ${equip.name.split(' ')[0]}`}
+                    </span>
                     <ArrowRight size={14} />
                   </button>
                 </div>
@@ -420,47 +436,7 @@ export default function InstallationEquipmentSection({ onOpenBooking, theme }) {
         </motion.div>
 
         {/* Bottom Assurance Banner */}
-        <div
-          style={{
-            marginTop: '3.5rem',
-            padding: '1.6rem 2rem',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, rgba(3, 78, 162, 0.08) 0%, rgba(0, 168, 89, 0.08) 100%)',
-            border: '1px solid var(--border-light)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1.5rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            {/* <div
-              style={{
-                width: '46px',
-                height: '46px',
-                borderRadius: '12px',
-                background: '#034ea2',
-                color: '#ffffff',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
-              }}
-            >
-              <FileCheck2 size={24} />
-            </div> */}
 
-          </div>
-
-          <button
-            onClick={() => onOpenBooking('Equipment Consultation')}
-            className="btn-primary"
-            style={{ padding: '0.75rem 1.4rem', fontSize: '0.88rem', flexShrink: 0 }}
-          >
-            Contact Installation Helpdesk
-          </button>
-        </div>
       </div>
 
       <style>{`

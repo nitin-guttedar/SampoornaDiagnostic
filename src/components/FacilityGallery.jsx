@@ -35,39 +35,7 @@ const ASSET_GALLERY = [
     src: ASSETS.bannerRollup,
     description:
       'Standee detailing complete clinical offerings at K.H. Road near Doomlight Circle, Madhugiri.',
-  },
-  // {
-  //   id: 5,
-  //   title: 'Digital X-Ray & 16-Slice CT Report Documentation',
-  //   category: 'Reporting Suite',
-  //   src: ASSETS.reportCover,
-  //   description:
-  //     'Official report envelope marking the 1st 16-Slice Multislice CT installation in Madhugiri.',
-  // },
-  {
-    id: 6,
-    title: 'Government KPME Registration & Director Signage',
-    category: 'Accreditation',
-    src: ASSETS.boardRegistration,
-    description:
-      'Karnataka Private Medical Establishments Registration: TMK01236ALCDS under Dr. Suhas Bhoovanalli.',
-  },
-  // {
-  //   id: 7,
-  //   title: 'Sampoorna Center Wall Emblem & Seal',
-  //   category: 'Branding',
-  //   src: ASSETS.brandMockup,
-  //   description:
-  //     'The emblem of holistic healthcare: medical cross, caring protective hand, and glowing sunburst.',
-  // },
-  // {
-  //   id: 8,
-  //   title: 'Official Clinical Prescription & Diagnostic Letterhead',
-  //   category: 'Clinical Notes',
-  //   src: ASSETS.letterheadClinical,
-  //   description:
-  //     'Ethical patient documentation with clinical correlation guidelines, ultrasound limitations, and transparent reporting.',
-  // },
+  }
 ];
 
 export default function FacilityGallery({ theme }) {

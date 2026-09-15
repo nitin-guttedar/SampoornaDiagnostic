@@ -70,7 +70,7 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
               }}
             >
               <ShieldCheck size={16} />
-              <span>KPME Reg: {CLINIC_INFO.kpmeReg}</span>
+              <span>Certified Diagnostic Quality</span>
             </div>
           </div>
 
@@ -222,8 +222,8 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
             lineHeight: 1.6,
           }}
         >
-          <strong style={{ color: '#ffffff' }}>Ethical Clinical Care & White-Hat Compliance:</strong> Sampoorna
-          Diagnostic Center adheres strictly to Karnataka Private Medical Establishments (KPME) regulations and the
+          <strong style={{ color: '#ffffff' }}>Ethical Clinical Care & Quality Compliance:</strong> Sampoorna
+          Diagnostic Center adheres strictly to established clinical quality protocols and the
           AERB safety guidelines for diagnostic radiation. Diagnostic images and laboratory values require clinical
           correlation by certified physicians. Serving Madhugiri, Pavagada, Koratagere, Sira, and Tumkur district.
         </div>

@@ -7,7 +7,7 @@ export const HERO_CONTENT = {
   subheading: "Advanced CT, Ultrasound, X-Ray and Laboratory services in Madhugiri, Tumkur district – all under one roof.",
   intro: "Sampoorna Diagnostic Center is a modern, patient-focused diagnostic facility located on K.H. Road near Doomlight Circle in Madhugiri, Tumkur district. We offer a comprehensive range of imaging and laboratory services supported by experienced radiologists, pathologists and superspeciality consultants, so that patients and referring doctors receive accurate reports and timely clinical support.",
   badge: "16-Slice CT Scan • 1st Time in Madhugiri",
-  kpmeBadge: "KPME Reg: TMK01236ALCDS",
+  trustBadge: "Hospital-Grade Diagnostic Infrastructure",
 };
 
 export const KEY_BENEFITS = [
@@ -193,7 +193,6 @@ export const ABOUT_CONTENT = {
   heading: "About Sampoorna Diagnostic Center",
   subheading: "Reliable, Evidence-Based Diagnostics Close to Home",
   lead: "Sampoorna Diagnostic Center was established to provide reliable, evidence-based diagnostic services close to home for the people of Madhugiri and Tumkur district. By combining advanced imaging technology with a high-standard laboratory and experienced consultants, we help clinicians arrive at accurate diagnoses and treatment plans.",
-  registration: "KPME Reg: TMK01236ALCDS",
   director: "Dr. Suhas Bhoovanalli",
   mission: "To deliver accurate, timely and ethically reported diagnostic results that support better clinical outcomes.",
   vision: "To be the most trusted diagnostic center in the Madhugiri–Tumkur region, recognized for professional standards, patient comfort and collaboration with the medical community.",
@@ -286,13 +285,6 @@ export const GALLERY_ITEMS = [
     desc: "Comprehensive non-invasive cardiac evaluation setup for treadmill stress tests and echo doppler examinations."
   },
   {
-    id: "official-reg",
-    title: "Karnataka Medical Establishment Registration (KPME)",
-    category: "Accreditation",
-    src: ASSETS.boardRegistration,
-    desc: "Official KPME Registration: TMK01236ALCDS under the medical leadership of Dr. Suhas Bhoovanalli."
-  },
-  {
     id: "brand-emblem",
     title: "Sampoorna Official Brand Identity & Seal",
     category: "Branding",
@@ -326,7 +318,7 @@ export const DR_SUHAS_INFO = {
   ]
 };
 
-// State-of-the-Art Diagnostic Machines Under Installation
+// State-of-the-Art Diagnostic Machines - All Installed except CT Scan under installation
 export const INSTALLING_EQUIPMENT = [
   {
     id: "toshiba-ct",
@@ -337,7 +329,7 @@ export const INSTALLING_EQUIPMENT = [
     categoryKey: "radiology",
     image: ASSETS.equipToshibaCt,
     status: "Under Installation & Calibration",
-    statusBadge: "Active Installation",
+    statusBadge: "Under Installation",
     badgeColor: "#034ea2",
     highlight: "1st 16-Slice CT in Madhugiri",
     features: [
@@ -362,8 +354,8 @@ export const INSTALLING_EQUIPMENT = [
     category: "Radiology & Imaging",
     categoryKey: "radiology",
     image: ASSETS.equipSamsungV7,
-    status: "Under Installation & Calibration",
-    statusBadge: "Active Installation",
+    status: "Installed & Operational",
+    statusBadge: "Installed & Operational",
     badgeColor: "#00a859",
     highlight: "Crystal Architecture™ Platform",
     features: [
@@ -388,8 +380,8 @@ export const INSTALLING_EQUIPMENT = [
     category: "Radiology & Imaging",
     categoryKey: "radiology",
     image: ASSETS.equipDigitalXrayDr,
-    status: "Under Installation & Calibration",
-    statusBadge: "Active Installation",
+    status: "Installed & Operational",
+    statusBadge: "Installed & Operational",
     badgeColor: "#0284c7",
     highlight: "Direct Flat-Panel Digital Detector (DR)",
     features: [
@@ -414,8 +406,8 @@ export const INSTALLING_EQUIPMENT = [
     category: "Cardiology Diagnostics",
     categoryKey: "cardiology",
     image: ASSETS.equipBplTreadmill,
-    status: "Under Installation & Calibration",
-    statusBadge: "Active Installation",
+    status: "Installed & Operational",
+    statusBadge: "Installed & Operational",
     badgeColor: "#d97706",
     highlight: "Computerized Cardiac Stress Test",
     features: [
@@ -440,8 +432,8 @@ export const INSTALLING_EQUIPMENT = [
     category: "Cardiology Diagnostics",
     categoryKey: "cardiology",
     image: ASSETS.equipBplEcg,
-    status: "Under Installation & Calibration",
-    statusBadge: "Active Installation",
+    status: "Installed & Operational",
+    statusBadge: "Installed & Operational",
     badgeColor: "#dc2626",
     highlight: "12-Channel High-Precision ECG",
     features: [
@@ -466,8 +458,8 @@ export const INSTALLING_EQUIPMENT = [
     category: "Pathology & Clinical Lab",
     categoryKey: "pathology",
     image: ASSETS.equipLabAnalyzers,
-    status: "Under Installation & Calibration",
-    statusBadge: "Active Installation",
+    status: "Installed & Operational",
+    statusBadge: "Installed & Operational",
     badgeColor: "#8b5cf6",
     highlight: "Fully Automated High-Throughput Suite",
     features: [

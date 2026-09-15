@@ -81,7 +81,7 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
               </span>
               <span className="glass-badge glass-badge-green">
                 <ShieldCheck size={14} />
-                <span>KPME: {CLINIC_INFO.kpmeReg}</span>
+                <span>Hospital-Grade Quality</span>
               </span>
             </div>
 

@@ -57,37 +57,6 @@ export default function AboutSection({ theme }) {
               />
             </div>
 
-            {/* Overlapping KPME Official Board Certificate Asset */}
-            <div
-              className="glass-panel about-kpme-badge"
-              style={{
-                position: 'absolute',
-                bottom: '-25px',
-                right: '-15px',
-                maxWidth: '280px',
-                padding: '12px',
-                border: '1px solid var(--border-green)',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.25)',
-                background: 'var(--bg-card)',
-              }}
-            >
-              <img
-                src={ASSETS.boardRegistration}
-                alt="KPME Registration TMK01236ALCDS - Dr. Suhas Bhoovanalli"
-                style={{
-                  width: '100%',
-                  borderRadius: '10px',
-                  marginBottom: '8px',
-                }}
-              />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ShieldCheck size={16} color="#00a859" />
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--heading-color)' }}>
-                  Govt. KPME Approved
-                </span>
-              </div>
-            </div>
-
             {/* Floating Experience Badge */}
             <div
               className="glass-panel about-exp-badge"
@@ -317,7 +286,7 @@ export default function AboutSection({ theme }) {
                 }}
               >
                 <ShieldCheck size={14} />
-                <span>KPME Registered</span>
+                <span>Certified Quality</span>
               </div>
             </div>
 
@@ -485,11 +454,6 @@ export default function AboutSection({ theme }) {
           .doctor-spotlight-grid {
             grid-template-columns: 1fr !important;
             gap: 1.4rem !important;
-          }
-          .about-kpme-badge {
-            position: static !important;
-            max-width: 100% !important;
-            margin-top: 14px !important;
           }
           .about-exp-badge {
             top: 10px !important;
