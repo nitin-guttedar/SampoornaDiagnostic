@@ -247,7 +247,7 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{ color: '#94a3b8' }}>
-              Designed By{' '}
+              Designed By{'  '}
               <a
                 href="https://www.damadigitalanalytics.com/"
                 target="_blank"
@@ -265,7 +265,7 @@ export default function Footer({ onOpenBooking, onOpenDirectory, theme }) {
               </a>
             </span>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
-            <span style={{ color: '#10b981', fontWeight: 600 }}>Accurate Diagnosis, Better Care</span>
+            {/* <span style={{ color: '#10b981', fontWeight: 600 }}>Accurate Diagnosis, Better Care</span> */}
           </div>
         </div>
       </div>

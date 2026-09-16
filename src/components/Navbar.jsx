@@ -112,16 +112,16 @@ export default function Navbar({
           background: 'linear-gradient(90deg, #022b68 0%, #034ea2 55%, #00743b 100%)',
           color: '#ffffff',
           fontSize: '0.82rem',
-          padding: '5px 0',
+          padding: '4px 0',
           borderBottom: '1px solid rgba(255,255,255,0.12)',
         }}
       >
         <div
-          className="nav-container"
+          className="topbar-container"
           style={{
             height: 'auto',
-            paddingTop: '3px',
-            paddingBottom: '3px',
+            paddingTop: '2px',
+            paddingBottom: '2px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -284,7 +284,8 @@ export default function Navbar({
                   marginTop: '2px',
                 }}
               >
-                Madhugiri, Tumkur Dist.
+                <span className="brand-sub-desktop">Madhugiri, Tumkur Dist.</span>
+                <span className="brand-sub-mobile">Diagnostic Center</span>
               </div>
             </div>
           </a>
@@ -855,6 +856,20 @@ export default function Navbar({
         .nav-cta-text-short { display: none; }
         .nav-cta-text-mini { display: none; }
         .nav-cta-text-full { display: inline; }
+        .brand-sub-mobile { display: none; }
+        .brand-sub-desktop { display: inline; }
+
+        .topbar-container {
+          width: 100%;
+          max-width: 1600px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 8px;
+          min-height: 32px;
+        }
 
         /* Desktop Mode (>= 1040px) */
         @media (min-width: 1040px) {
@@ -897,49 +912,57 @@ export default function Navbar({
         @media (max-width: 767px) {
           .topbar-hours-full { display: none !important; }
           .topbar-hours-short { display: inline !important; font-size: 0.74rem; }
+          .topbar-container {
+            padding: 0 12px !important;
+            min-height: 28px !important;
+            height: auto !important;
+          }
           .nav-container {
             padding: 0 12px !important;
-            height: 64px !important;
+            height: 60px !important;
           }
         }
 
         /* Mobile Standard (< 640px) */
         @media (max-width: 640px) {
+          .nav-brand-link {
+            max-width: calc(100% - 126px) !important;
+            overflow: hidden !important;
+          }
           .nav-brand-logo {
-            height: 35px !important;
+            height: 36px !important;
+          }
+          .nav-brand-badge {
+            display: none !important;
+          }
+          .brand-sub-desktop {
+            display: none !important;
+          }
+          .brand-sub-mobile {
+            display: block !important;
+            font-size: 0.65rem !important;
+            color: #00a859 !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.03em !important;
+            text-transform: uppercase !important;
+            line-height: 1 !important;
           }
           .nav-brand-title {
             font-size: 0.98rem !important;
             gap: 4px !important;
           }
-          .nav-brand-badge {
-            font-size: 0.65rem !important;
-            padding: 1px 5px !important;
-          }
           .nav-brand-subtitle {
-            font-size: 0.68rem !important;
-            margin-top: 1px !important;
+            margin-top: 2px !important;
           }
           .nav-actions-wrapper {
             gap: 8px !important;
           }
           .mobile-hamburger {
-            width: 40px !important;
-            height: 40px !important;
+            width: 38px !important;
+            height: 38px !important;
             border-radius: 9px !important;
           }
-        }
-
-        /* Mobile Narrow (< 480px, e.g. iPhones 375px - 414px) */
-        @media (max-width: 480px) {
-          .nav-brand-subtitle { display: none !important; }
-          .nav-brand-title {
-            font-size: 0.92rem !important;
-          }
-          .nav-brand-badge {
-            font-size: 0.62rem !important;
-            padding: 1px 4px !important;
-          }
+          .nav-cta-text-full { display: none !important; }
           .nav-cta-text-short { display: none !important; }
           .nav-cta-text-mini { display: inline !important; }
           .nav-cta-btn {
@@ -947,6 +970,19 @@ export default function Navbar({
             font-size: 0.76rem !important;
             gap: 4px !important;
             border-radius: 8px !important;
+          }
+        }
+
+        /* Mobile Narrow (< 480px, e.g. iPhones 375px - 414px) */
+        @media (max-width: 480px) {
+          .nav-brand-logo {
+            height: 33px !important;
+          }
+          .nav-brand-title {
+            font-size: 0.92rem !important;
+          }
+          .brand-sub-mobile {
+            font-size: 0.62rem !important;
           }
           .theme-toggle-label { display: none !important; }
         }
@@ -961,9 +997,6 @@ export default function Navbar({
           }
           .nav-brand-title span:first-child {
             font-size: 0.84rem !important;
-          }
-          .nav-brand-badge {
-            display: none !important;
           }
         }
       `}</style>

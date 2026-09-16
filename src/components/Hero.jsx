@@ -31,9 +31,9 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
 
   return (
     <section
+      className="hero-section"
       style={{
         position: 'relative',
-        paddingTop: '135px',
         paddingBottom: '70px',
         overflow: 'hidden',
       }}
@@ -74,7 +74,10 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
             transition={{ duration: 0.6 }}
           >
             {/* Badges */}
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '1.2rem' }}>
+            <div
+              className="hero-badges-wrapper"
+              style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '1.2rem' }}
+            >
               <span className="glass-badge glass-badge-amber">
                 <Zap size={14} />
                 <span>16-Slice CT Scan • 1st Time in Madhugiri</span>
@@ -492,7 +495,14 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
           color: #00a859;
         }
 
+        .hero-section {
+          padding-top: 145px;
+        }
+
         @media (max-width: 992px) {
+          .hero-section {
+            padding-top: 135px !important;
+          }
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
@@ -503,6 +513,14 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
         }
 
         @media (max-width: 768px) {
+          .hero-section {
+            padding-top: 125px !important;
+          }
+          .hero-badges-wrapper {
+            margin-top: 14px !important;
+            margin-bottom: 1rem !important;
+            gap: 8px !important;
+          }
           .hero-canvas-wrapper {
             height: 360px !important;
           }
@@ -531,6 +549,12 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
         }
 
         @media (max-width: 640px) {
+          .hero-section {
+            padding-top: 120px !important;
+          }
+          .hero-badges-wrapper {
+            margin-top: 16px !important;
+          }
           .hero-tabs-scroll {
             display: grid !important;
             grid-template-columns: repeat(2, 1fr) !important;
