@@ -30,8 +30,8 @@ export const CLINIC_INFO = {
   email: "sdclab.madhugiri@gmail.com",
   gmailComposeUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=sdclab.madhugiri@gmail.com",
   googleMapsUrl: "https://maps.app.goo.gl/3GZijJuPQ3pDXCfb8?g_st=ic",
-  headDoctor: "Dr. Suhas Bhoovanalli",
-  leadConsultant: "Dr. Suhas Bhoovanalli",
+  headDoctor: "Dr. Suhas Bhoovanahalli",
+  leadConsultant: "Dr. Suhas Bhoovanahalli",
   landmarkMilestone: "16-Slice Multislice CT Scan – 1st Time in Madhugiri",
   workingHours: {
     weekdays: "Mon – Sat: 8:00 AM – 8:00 PM",

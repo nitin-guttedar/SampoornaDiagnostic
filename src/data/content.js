@@ -34,7 +34,7 @@ export const KEY_BENEFITS = [
     icon: "UserCheck",
     title: "Expert Consultation",
     kannadaTitle: "ತಜ್ಞ ವೈದ್ಯರ ಸಮಾಲೋಚನೆ",
-    desc: "Experienced radiologists, cardiology specialists and visiting superspeciality consultants headed by Dr. Suhas Bhoovanalli.",
+    desc: "Experienced radiologists, cardiology specialists and visiting superspeciality consultants headed by Dr. Suhas Bhoovanahalli.",
     highlight: "Renowned Specialists",
     color: "#f59e0b"
   },
@@ -193,7 +193,7 @@ export const ABOUT_CONTENT = {
   heading: "About Sampoorna Diagnostic Center",
   subheading: "Reliable, Evidence-Based Diagnostics Close to Home",
   lead: "Sampoorna Diagnostic Center was established to provide reliable, evidence-based diagnostic services close to home for the people of Madhugiri and Tumkur district. By combining advanced imaging technology with a high-standard laboratory and experienced consultants, we help clinicians arrive at accurate diagnoses and treatment plans.",
-  director: "Dr. Suhas Bhoovanalli",
+  director: "Dr. Suhas Bhoovanahalli",
   mission: "To deliver accurate, timely and ethically reported diagnostic results that support better clinical outcomes.",
   vision: "To be the most trusted diagnostic center in the Madhugiri–Tumkur region, recognized for professional standards, patient comfort and collaboration with the medical community.",
   values: [
@@ -293,15 +293,15 @@ export const GALLERY_ITEMS = [
   }
 ];
 
-// Doctor Profile: Dr. Suhas Bhoovanalli
+// Doctor Profile: Dr. Suhas Bhoovanahalli
 export const DR_SUHAS_INFO = {
-  name: "Dr. Suhas Bhoovanalli",
+  name: "Dr. Suhas Bhoovanahalli",
   title: "Consultant Radiologist & Diagnostic Specialist",
   role: "Consultant Radiologist & Imaging Specialist",
   qualifications: "MBBS, MD (Radiodiagnosis)",
   experience: "Expert in Cross-Sectional Diagnostic Imaging",
   image: ASSETS.drSuhasBhoovanalli,
-  bio: "Dedicated to bringing tertiary-care diagnostic precision to Madhugiri and Tumkur district. Dr. Suhas Bhoovanalli oversees computed tomography (16-slice CT), high-resolution ultrasound, color Doppler sonography, and digital radiography at Sampoorna Diagnostic Center, ensuring rapid, clinically validated, and compassionate diagnostic reporting for every patient.",
+  bio: "Dedicated to bringing tertiary-care diagnostic precision to Madhugiri and Tumkur district. Dr. Suhas Bhoovanahalli oversees computed tomography (16-slice CT), high-resolution ultrasound, color Doppler sonography, and digital radiography at Sampoorna Diagnostic Center, ensuring rapid, clinically validated, and compassionate diagnostic reporting for every patient.",
   specialties: [
     "16-Slice CT Scan & 3D Volumetric Imaging",
     "High-Resolution Ultrasound & Color Doppler",

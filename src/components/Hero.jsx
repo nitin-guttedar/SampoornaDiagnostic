@@ -310,7 +310,7 @@ export default function Hero({ onOpenBooking, onOpenDirectory, theme }) {
                     Consultant Head
                   </span>
                   <p className="telemetry-value telemetry-value-head">
-                    Dr. Suhas Bhoovanalli
+                    Dr. Suhas Bhoovanahalli
                   </p>
                 </div>
               </div>

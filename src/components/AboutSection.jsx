@@ -197,7 +197,7 @@ export default function AboutSection({ theme }) {
           </motion.div>
         </div>
 
-        {/* Dedicated Medical Leadership Spotlight: Dr. Suhas Bhoovanalli */}
+        {/* Dedicated Medical Leadership Spotlight: Dr. Suhas Bhoovanahalli */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -256,7 +256,7 @@ export default function AboutSection({ theme }) {
               >
                 <img
                   src={DR_SUHAS_INFO.image}
-                  alt="Dr. Suhas Bhoovanalli - Consultant Radiologist with Sampoorna Diagnostic Logo on Apron"
+                  alt="Dr. Suhas Bhoovanahalli - Consultant Radiologist with Sampoorna Diagnostic Logo on Apron"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -394,7 +394,7 @@ export default function AboutSection({ theme }) {
               {/* Consultation / Appointment CTAs */}
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
                 <a
-                  href={`https://wa.me/${CLINIC_INFO.whatsapp}?text=${encodeURIComponent(`Hello Dr. Suhas Bhoovanalli / Sampoorna Diagnostic, I would like to consult or book an imaging scan.`)}`}
+                  href={`https://wa.me/${CLINIC_INFO.whatsapp}?text=${encodeURIComponent(`Hello Dr. Suhas Bhoovanahalli / Sampoorna Diagnostic, I would like to consult or book an imaging scan.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
